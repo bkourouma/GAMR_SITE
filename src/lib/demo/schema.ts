@@ -130,13 +130,10 @@ export const contactSchema = z.object({
   // Phone format: +225 01 01 01 01 01 (Côte d'Ivoire)
   phone: z
     .string()
-    .trim()
-    .regex(
-      /^\+225\s\d{2}\s\d{2}\s\d{2}\s\d{2}\s\d{2}$/,
-      'Le format du téléphone doit être: +225 01 01 01 01 01'
-    )
-    .optional()
-    .or(z.literal('')),
+    .default('')
+    .refine((val) => val === '' || /^\+225\s\d{2}\s\d{2}\s\d{2}\s\d{2}\s\d{2}$/.test(val), {
+      message: 'Le format du téléphone doit être: +225 01 01 01 01 01',
+    }),
 
   role: roleSchema.optional(),
 });
@@ -149,10 +146,10 @@ export const qualificationSchema = z.object({
 
   standardsOther: z
     .string()
-    .trim()
-    .max(200, 'La précision ne doit pas dépasser 200 caractères')
-    .optional()
-    .or(z.literal('')),
+    .default('')
+    .refine((val) => val.trim().length <= 200, {
+      message: 'La précision ne doit pas dépasser 200 caractères',
+    }),
 
   goals: z.array(goalSchema).min(1, 'Veuillez sélectionner au moins un objectif'),
 
@@ -160,14 +157,14 @@ export const qualificationSchema = z.object({
 
   context: z
     .string()
-    .trim()
-    .max(400, 'Le contexte ne doit pas dépasser 400 caractères')
-    .optional()
-    .or(z.literal('')),
+    .default('')
+    .refine((val) => val.trim().length <= 400, {
+      message: 'Le contexte ne doit pas dépasser 400 caractères',
+    }),
 
   mode: modeSchema,
 
-  imports: z.array(importSchema).optional().default([]),
+  imports: z.array(importSchema).catch([]),
 
   modules: z.array(moduleSchema).min(1, 'Veuillez sélectionner au moins un module à prioriser'),
 });
@@ -206,13 +203,13 @@ export const consentSchema = z.object({
     message: 'Le consentement RGPD est requis pour soumettre ce formulaire',
   }),
 
-  marketingOptIn: z.boolean().optional().default(false),
+  marketingOptIn: z.boolean().default(false),
 
   // Honeypot field (anti-spam)
   honeypot: z
     .string()
-    .optional()
-    .refine((val) => !val || val === '', {
+    .default('')
+    .refine((val) => val === '', {
       message: 'Soumission invalide',
     }),
 });

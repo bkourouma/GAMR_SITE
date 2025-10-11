@@ -1,6 +1,7 @@
 import { Resend } from 'resend';
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+// Use default key during build, actual key at runtime
+const resend = new Resend(process.env.RESEND_API_KEY || 're_dummy_key_for_build');
 
 interface SendDemoConfirmationParams {
   to: string;

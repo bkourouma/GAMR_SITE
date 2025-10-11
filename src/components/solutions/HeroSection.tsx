@@ -74,9 +74,9 @@ export function HeroSection({
           {/* Use provided title; if you want a two-line style, split on `|` */}
           {title.includes('|') ? (
             <>
-              <span className="block animate-slide-in-left">{title.split('|')[0].trim()}</span>
+              <span className="block animate-slide-in-left">{title.split('|')[0]?.trim()}</span>
               <span className="block bg-gradient-to-r from-white via-yellow-200 to-orange-200 bg-clip-text text-transparent animate-slide-in-right">
-                {title.split('|')[1].trim()}
+                {title.split('|')[1]?.trim()}
               </span>
             </>
           ) : (
