@@ -167,7 +167,7 @@ export const qualificationSchema = z.object({
 
   mode: modeSchema,
 
-  imports: z.array(importSchema).default([]),
+  imports: z.array(importSchema).optional().default([]),
 
   modules: z.array(moduleSchema).min(1, 'Veuillez sélectionner au moins un module à prioriser'),
 });

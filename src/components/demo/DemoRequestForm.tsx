@@ -24,7 +24,7 @@ export function DemoRequestForm() {
     resolver: zodResolver(demoRequestSchema),
     mode: 'onBlur',
     defaultValues: {
-      timezone: 'Africa/Abidjan',
+      _timezone: 'Africa/Abidjan',
       meetingTool: 'google_meet',
       language: 'fr',
       marketingOptIn: false,
