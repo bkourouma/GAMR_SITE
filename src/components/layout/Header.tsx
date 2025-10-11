@@ -107,22 +107,22 @@ export function Header() {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="md:hidden relative w-10 h-10 flex flex-col items-center justify-center gap-1.5 text-white hover:scale-110 transition-transform duration-300"
+            className="md:hidden relative w-10 h-10 flex flex-col items-center justify-center gap-1.5 text-white hover:scale-110 transition-transform duration-300 bg-white/10 rounded-lg backdrop-blur-sm"
             aria-label="Toggle menu"
             aria-expanded={isMobileMenuOpen}
           >
             <span
-              className={`w-6 h-0.5 bg-white transition-all duration-300 ${
+              className={`w-6 h-0.5 bg-white shadow-sm transition-all duration-300 ${
                 isMobileMenuOpen ? 'rotate-45 translate-y-2' : ''
               }`}
             />
             <span
-              className={`w-6 h-0.5 bg-white transition-all duration-300 ${
+              className={`w-6 h-0.5 bg-white shadow-sm transition-all duration-300 ${
                 isMobileMenuOpen ? 'opacity-0' : ''
               }`}
             />
             <span
-              className={`w-6 h-0.5 bg-white transition-all duration-300 ${
+              className={`w-6 h-0.5 bg-white shadow-sm transition-all duration-300 ${
                 isMobileMenuOpen ? '-rotate-45 -translate-y-2' : ''
               }`}
             />
@@ -132,7 +132,7 @@ export function Header() {
 
       {/* Mobile Navigation Menu */}
       <div
-        className={`md:hidden fixed inset-0 top-20 z-40 bg-slate-900/98 backdrop-blur-lg transition-all duration-300 ${
+        className={`md:hidden fixed inset-0 top-20 z-40 bg-slate-900/99 backdrop-blur-xl transition-all duration-300 ${
           isMobileMenuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
         }`}
       >
