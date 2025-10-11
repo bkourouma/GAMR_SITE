@@ -4,16 +4,7 @@ import Link from 'next/link';
 import { useState, useEffect } from 'react';
 
 export function Header() {
-  const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 10);
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
 
   // Close mobile menu when clicking outside or on a link
   useEffect(() => {
@@ -29,11 +20,7 @@ export function Header() {
 
   return (
     <header
-      className={`sticky top-0 z-50 w-full border-b transition-all duration-500 ${
-        isScrolled
-          ? 'border-gray-200 bg-white/95 backdrop-blur-md shadow-lg'
-          : 'border-transparent bg-gradient-to-r from-slate-900/95 via-slate-800/95 to-slate-900/95 backdrop-blur-md'
-      }`}
+      className={`sticky top-0 z-50 w-full border-b transition-all duration-500 border-transparent bg-gradient-to-r from-slate-900/95 via-slate-800/95 to-slate-900/95 backdrop-blur-md`}
     >
       <div className="container mx-auto flex h-20 items-center justify-between px-6">
         <Link
@@ -107,22 +94,22 @@ export function Header() {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="md:hidden relative w-10 h-10 flex flex-col items-center justify-center gap-1.5 text-white hover:scale-110 transition-transform duration-300 bg-white/10 rounded-lg backdrop-blur-sm"
+            className="md:hidden relative w-10 h-10 flex flex-col items-center justify-center gap-1.5 text-white hover:scale-110 transition-transform duration-300 bg-black/20 rounded-lg backdrop-blur-sm border border-white/20"
             aria-label="Toggle menu"
             aria-expanded={isMobileMenuOpen}
           >
             <span
-              className={`w-6 h-0.5 bg-white shadow-sm transition-all duration-300 ${
+              className={`w-6 h-0.5 bg-white shadow-lg transition-all duration-300 ${
                 isMobileMenuOpen ? 'rotate-45 translate-y-2' : ''
               }`}
             />
             <span
-              className={`w-6 h-0.5 bg-white shadow-sm transition-all duration-300 ${
+              className={`w-6 h-0.5 bg-white shadow-lg transition-all duration-300 ${
                 isMobileMenuOpen ? 'opacity-0' : ''
               }`}
             />
             <span
-              className={`w-6 h-0.5 bg-white shadow-sm transition-all duration-300 ${
+              className={`w-6 h-0.5 bg-white shadow-lg transition-all duration-300 ${
                 isMobileMenuOpen ? '-rotate-45 -translate-y-2' : ''
               }`}
             />
@@ -132,7 +119,7 @@ export function Header() {
 
       {/* Mobile Navigation Menu */}
       <div
-        className={`md:hidden fixed inset-0 top-20 z-40 bg-slate-900/99 backdrop-blur-xl transition-all duration-300 ${
+        className={`md:hidden fixed inset-0 top-20 z-40 bg-black transition-all duration-300 ${
           isMobileMenuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
         }`}
       >
