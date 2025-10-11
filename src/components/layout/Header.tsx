@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
+import { createPortal } from 'react-dom';
 
 export function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -117,57 +118,65 @@ export function Header() {
         </div>
       </div>
 
-      {/* Mobile Navigation Menu */}
-      <div
-        className={`md:hidden fixed inset-0 top-20 z-40 bg-black transition-all duration-300 ${
-          isMobileMenuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
-        }`}
-      >
-        <nav className="container mx-auto px-6 py-8 flex flex-col gap-6">
-          <Link
-            href="/fonctionnalites"
-            className="text-lg font-semibold text-white/90 hover:text-white hover:translate-x-2 transition-all duration-300 py-3 border-b border-white/10"
-            onClick={() => setIsMobileMenuOpen(false)}
+      {/* Mobile Navigation Menu (rendered in a portal to escape stacking contexts) */}
+      {typeof window !== 'undefined' &&
+        createPortal(
+          <div
+            className={`md:hidden fixed inset-0 z-[1000] transition-transform duration-300 ${
+              isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
+            }`}
+            style={{ backgroundColor: 'rgba(7, 10, 15, 1)' }}
+            role="dialog"
+            aria-modal="true"
           >
-            Fonctionnalités
-          </Link>
-          <Link
-            href="/solutions"
-            className="text-lg font-semibold text-white/90 hover:text-white hover:translate-x-2 transition-all duration-300 py-3 border-b border-white/10"
-            onClick={() => setIsMobileMenuOpen(false)}
-          >
-            Solutions
-          </Link>
-          <Link
-            href="/tarifs"
-            className="text-lg font-semibold text-white/90 hover:text-white hover:translate-x-2 transition-all duration-300 py-3 border-b border-white/10"
-            onClick={() => setIsMobileMenuOpen(false)}
-          >
-            Tarifs
-          </Link>
-          <Link
-            href="/a-propos"
-            className="text-lg font-semibold text-white/90 hover:text-white hover:translate-x-2 transition-all duration-300 py-3 border-b border-white/10"
-            onClick={() => setIsMobileMenuOpen(false)}
-          >
-            À Propos
-          </Link>
-          <Link
-            href="/espace-clients"
-            className="text-lg font-semibold text-white/90 hover:text-white hover:translate-x-2 transition-all duration-300 py-3 border-b border-white/10"
-            onClick={() => setIsMobileMenuOpen(false)}
-          >
-            Espace Clients
-          </Link>
-          <Link
-            href="/demander-demo"
-            className="text-lg font-semibold text-white/90 hover:text-white hover:translate-x-2 transition-all duration-300 py-3 border-b border-white/10"
-            onClick={() => setIsMobileMenuOpen(false)}
-          >
-            Demander une Démo
-          </Link>
-        </nav>
-      </div>
+            <div className="fixed top-0 left-0 right-0 h-20" />
+            <nav className="container mx-auto px-6 py-8 flex flex-col gap-6">
+              <Link
+                href="/fonctionnalites"
+                className="text-lg font-semibold text-white hover:translate-x-2 transition-all duration-300 py-3 border-b border-white/10"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Fonctionnalités
+              </Link>
+              <Link
+                href="/solutions"
+                className="text-lg font-semibold text-white hover:translate-x-2 transition-all duration-300 py-3 border-b border-white/10"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Solutions
+              </Link>
+              <Link
+                href="/tarifs"
+                className="text-lg font-semibold text-white hover:translate-x-2 transition-all duration-300 py-3 border-b border-white/10"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Tarifs
+              </Link>
+              <Link
+                href="/a-propos"
+                className="text-lg font-semibold text-white hover:translate-x-2 transition-all duration-300 py-3 border-b border-white/10"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                À Propos
+              </Link>
+              <Link
+                href="/espace-clients"
+                className="text-lg font-semibold text-white hover:translate-x-2 transition-all duration-300 py-3 border-b border-white/10"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Espace Clients
+              </Link>
+              <Link
+                href="/demander-demo"
+                className="text-lg font-semibold text-white hover:translate-x-2 transition-all duration-300 py-3 border-b border-white/10"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Demander une Démo
+              </Link>
+            </nav>
+          </div>,
+          document.body
+        )}
     </header>
   );
 }
