@@ -1,0 +1,11 @@
+node_modules
+.next
+out
+build
+coverage
+.lighthouseci
+pnpm-lock.yaml
+package-lock.json
+
+
+

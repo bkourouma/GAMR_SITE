@@ -1,0 +1,24 @@
+<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Construction helmet -->
+  <path d="M32 8C24.268 8 18 14.268 18 22V28C18 30.209 19.791 32 22 32H42C44.209 32 46 30.209 46 28V22C46 14.268 39.732 8 32 8Z" fill="#3B82F6" stroke="#1E40AF" stroke-width="2"/>
+  
+  <!-- Helmet visor -->
+  <path d="M20 28H44V30C44 31.105 43.105 32 42 32H22C20.895 32 20 31.105 20 30V28Z" fill="#1E40AF"/>
+  
+  <!-- Construction crane -->
+  <rect x="8" y="40" width="4" height="20" fill="#6B7280"/>
+  <rect x="6" y="38" width="8" height="4" fill="#6B7280"/>
+  
+  <!-- Crane arm -->
+  <rect x="12" y="42" width="20" height="2" fill="#6B7280"/>
+  <rect x="30" y="40" width="2" height="8" fill="#6B7280"/>
+  
+  <!-- Building blocks -->
+  <rect x="40" y="36" width="8" height="8" fill="#F59E0B" stroke="#D97706" stroke-width="1"/>
+  <rect x="50" y="32" width="8" height="8" fill="#F59E0B" stroke="#D97706" stroke-width="1"/>
+  <rect x="44" y="28" width="8" height="8" fill="#F59E0B" stroke="#D97706" stroke-width="1"/>
+  
+  <!-- Safety elements -->
+  <circle cx="28" cy="20" r="2" fill="#EF4444"/>
+  <circle cx="36" cy="20" r="2" fill="#EF4444"/>
+</svg>

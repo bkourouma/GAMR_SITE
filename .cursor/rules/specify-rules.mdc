@@ -1,0 +1,38 @@
+﻿# gamr-site Development Guidelines
+
+Auto-generated from all feature plans. Last updated: 2025-10-08
+
+## Active Technologies
+- TypeScript 5.3+ with strict mode enabled (001-site-marketing-gamr)
+- TypeScript 5.x with strict mode enabled (noUncheckedIndexedAccess, noImplicitOverride, exactOptionalPropertyTypes) + Next.js 14.2+, React 18.3+, Tailwind CSS 3.4+, Lucide React (icons), clsx/tailwind-merge (class composition) (002-transform-the-gamr)
+- N/A (static content only, no database) (002-transform-the-gamr)
+- TypeScript 5+ with strict mode enabled + Next.js 15 (App Router), React 18, Tailwind CSS 3+, shadcn/ui components (003-page-fonctionnalit-s)
+- Static content (MDX/TypeScript constants), JSON feature data export (003-page-fonctionnalit-s)
+- TypeScript 5+ with Next.js 14 (app directory) + React 18, Tailwind CSS, Lucide React (icons) (004-page-solutions-pr)
+- N/A (static content, exportable JSON data structure) (004-page-solutions-pr)
+- TypeScript 5+ with strict mode + React 18+, Tailwind CSS 3+, shadcn/ui components (Card, Badge, Toggle, Accordion, Table, Button) (005-g-n-re)
+- N/A (static pricing data in TypeScript module) (005-g-n-re)
+- TypeScript 5+ with strict mode enabled + Next.js 14+ (App Router), React 18+, Tailwind CSS 3+ (006-redige-la-page)
+- Static content stored in TypeScript data files (following pattern from `src/lib/features-data.ts`, `src/lib/stats.ts`) (006-redige-la-page)
+- TypeScript 5.3+ (Next.js 15 with App Router) + React Hook Form, Zod, ics (calendar generation), Resend/Nodemailer (email), date-fns-tz (timezone handling) (008-g-n-re)
+- JSON file or Prisma/PostgreSQL for demo request persistence (008-g-n-re)
+
+## Project Structure
+```
+src/
+tests/
+```
+
+## Commands
+npm test; npm run lint
+
+## Code Style
+TypeScript 5.3+ with strict mode enabled: Follow standard conventions
+
+## Recent Changes
+- 008-g-n-re: Added TypeScript 5.3+ (Next.js 15 with App Router) + React Hook Form, Zod, ics (calendar generation), Resend/Nodemailer (email), date-fns-tz (timezone handling)
+- 008-g-n-re: Added TypeScript 5.3+ (Next.js 15 with App Router) + React Hook Form, Zod, ics (calendar generation), Resend/Nodemailer (email), date-fns-tz (timezone handling)
+- 006-redige-la-page: Added TypeScript 5+ with strict mode enabled + Next.js 14+ (App Router), React 18+, Tailwind CSS 3+
+
+<!-- MANUAL ADDITIONS START -->
+<!-- MANUAL ADDITIONS END -->

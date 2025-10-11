@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <!-- Extractive Industry - Mining/Oil icon -->
+  <circle cx="32" cy="32" r="30" fill="#F59E0B" opacity="0.1"/>
+  <path d="M20 38 L32 20 L44 38 Z" fill="#F59E0B" stroke="#D97706" stroke-width="2"/>
+  <rect x="28" y="38" width="8" height="16" fill="#D97706"/>
+  <path d="M16 54 L48 54" stroke="#78350F" stroke-width="3" stroke-linecap="round"/>
+  <circle cx="24" cy="28" r="2" fill="#FCD34D"/>
+  <circle cx="36" cy="26" r="2" fill="#FCD34D"/>
+  <circle cx="32" cy="32" r="2" fill="#FCD34D"/>
+</svg>
+
+
+

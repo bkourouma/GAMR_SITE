@@ -1,0 +1,412 @@
+openapi: 3.0.3
+info:
+  title: GAMR Trial Request API
+  description: |
+    API endpoint for submitting free trial requests from the /essai-gratuit page.
+    
+    Handles form validation, email notifications (internal alert + visitor confirmation),
+    and spam protection via honeypot and rate limiting.
+  version: 1.0.0
+  contact:
+    name: GAMR Development Team
+    email: dev@gamr.com
+
+servers:
+  - url: http://localhost:3000/api
+    description: Local development
+  - url: https://gamr.com/api
+    description: Production
+
+tags:
+  - name: trial
+    description: Free trial request operations
+
+paths:
+  /trial:
+    post:
+      tags:
+        - trial
+      summary: Submit free trial request
+      description: |
+        Validates and processes a free trial request submission from the questionnaire form.
+        
+        **Process flow**:
+        1. Server-side validation (Zod schema)
+        2. Honeypot check (reject if not empty)
+        3. Rate limit check (max 5 submissions per IP per hour)
+        4. Send internal alert email to GAMR team
+        5. Send confirmation email to visitor
+        6. Return success response
+        
+        **Note**: Email sending failures do not block success response. Submission succeeds
+        and user sees confirmation screen even if emails fail (logged for admin review).
+      
+      operationId: submitTrialRequest
+      
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TrialRequest'
+            examples:
+              completeSubmission:
+                summary: Complete trial request with all optional fields
+                value:
+                  sector: "bank"
+                  org_size: "201-1000"
+                  standards: ["iso27001", "basel3", "rgpd_anssici"]
+                  goals: ["compliance", "reporting", "automation"]
+                  maturity: 3
+                  users: 50
+                  imports: ["excel", "csv"]
+                  modules: ["risk_eval", "audits", "dashboards"]
+                  timeline: "1-3m"
+                  constraint: "Besoin d'intégration avec notre ERP existant"
+                  fullname: "Marie Dupont"
+                  org: "Banque Nationale"
+                  email: "m.dupont@banque-nationale.fr"
+                  phone: "+33612345678"
+                  consent: true
+              
+              minimalSubmission:
+                summary: Minimal trial request (only required fields)
+                value:
+                  sector: "health"
+                  org_size: "51-200"
+                  standards: ["oms_ps"]
+                  goals: ["mapping", "compliance"]
+                  maturity: 2
+                  users: 25
+                  modules: ["risk_eval", "incidents"]
+                  timeline: "now"
+                  fullname: "Dr. Jean Martin"
+                  org: "Hôpital Régional"
+                  email: "j.martin@hopital-regional.fr"
+                  consent: true
+      
+      responses:
+        '200':
+          description: Trial request successfully submitted
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TrialSuccessResponse'
+              examples:
+                success:
+                  summary: Successful submission
+                  value:
+                    success: true
+                    message: "Demande d'essai enregistrée avec succès"
+        
+        '400':
+          description: Validation error or invalid data
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TrialErrorResponse'
+              examples:
+                validationError:
+                  summary: Missing required fields
+                  value:
+                    success: false
+                    error: "Données invalides"
+                    details:
+                      issues:
+                        - path: ["email"]
+                          message: "Email invalide"
+                        - path: ["consent"]
+                          message: "Vous devez accepter d'être contacté pour continuer"
+                
+                honeypotDetected:
+                  summary: Spam detected via honeypot
+                  value:
+                    success: false
+                    error: "Invalid submission"
+        
+        '429':
+          description: Rate limit exceeded
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TrialErrorResponse'
+              examples:
+                rateLimitExceeded:
+                  summary: Too many requests from same IP
+                  value:
+                    success: false
+                    error: "Trop de demandes. Veuillez réessayer dans quelques minutes."
+          headers:
+            Retry-After:
+              description: Number of seconds to wait before retrying
+              schema:
+                type: integer
+                example: 3600
+        
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TrialErrorResponse'
+              examples:
+                serverError:
+                  summary: Unexpected server error
+                  value:
+                    success: false
+                    error: "Une erreur est survenue. Veuillez réessayer."
+
+components:
+  schemas:
+    TrialRequest:
+      type: object
+      required:
+        - sector
+        - org_size
+        - standards
+        - goals
+        - maturity
+        - users
+        - modules
+        - timeline
+        - fullname
+        - org
+        - email
+        - consent
+      properties:
+        # Question 1: Secteur d'activité
+        sector:
+          type: string
+          enum:
+            - extractive
+            - aero
+            - gov
+            - bank
+            - health
+            - other
+          description: "Secteur d'activité de l'organisation"
+          example: "bank"
+        
+        # Question 2: Taille de l'organisation
+        org_size:
+          type: string
+          enum:
+            - "1-10"
+            - "11-50"
+            - "51-200"
+            - "201-1000"
+            - "1000+"
+          description: "Nombre d'employés dans l'organisation"
+          example: "201-1000"
+        
+        # Question 3: Normes prioritaires
+        standards:
+          type: array
+          items:
+            type: string
+            enum:
+              - iso31000
+              - iso27001
+              - iso45001
+              - iso14001
+              - icao19
+              - coso
+              - rgpd_anssici
+              - basel3
+              - oms_ps
+              - other
+          minItems: 1
+          description: "Normes et référentiels de conformité prioritaires"
+          example: ["iso27001", "basel3"]
+        
+        # Question 4: Objectifs principaux
+        goals:
+          type: array
+          items:
+            type: string
+            enum:
+              - mapping
+              - compliance
+              - automation
+              - reporting
+              - collab
+              - awareness
+              - other
+          minItems: 1
+          description: "Objectifs principaux pour la gestion des risques"
+          example: ["compliance", "reporting"]
+        
+        # Question 5: Maturité actuelle
+        maturity:
+          type: integer
+          minimum: 1
+          maximum: 5
+          description: "Niveau de maturité actuel en gestion des risques (1=peu mature, 5=très mature)"
+          example: 3
+        
+        # Question 6: Nombre d'utilisateurs prévus
+        users:
+          type: integer
+          minimum: 1
+          description: "Nombre d'utilisateurs prévus pour GAMR"
+          example: 50
+        
+        # Question 7: Données à importer (optional)
+        imports:
+          type: array
+          items:
+            type: string
+            enum:
+              - excel
+              - csv
+              - erp_crm
+              - none
+              - other
+          description: "Sources de données à importer au démarrage"
+          example: ["excel", "csv"]
+        
+        # Question 8: Modules prioritaires
+        modules:
+          type: array
+          items:
+            type: string
+            enum:
+              - risk_eval
+              - actions
+              - incidents
+              - audits
+              - dashboards
+              - multi_entity
+          minItems: 1
+          description: "Modules GAMR prioritaires à activer"
+          example: ["risk_eval", "audits", "dashboards"]
+        
+        # Question 9: Délai souhaité
+        timeline:
+          type: string
+          enum:
+            - now
+            - lt1m
+            - "1-3m"
+            - ">3m"
+          description: "Délai souhaité pour la mise en œuvre"
+          example: "1-3m"
+        
+        # Question 10: Contrainte (optional)
+        constraint:
+          type: string
+          maxLength: 200
+          description: "Principale contrainte ou besoin spécifique à prendre en compte"
+          example: "Besoin d'intégration avec notre ERP existant"
+        
+        # Contact: Nom complet
+        fullname:
+          type: string
+          minLength: 2
+          description: "Nom complet du demandeur"
+          example: "Marie Dupont"
+        
+        # Contact: Organisation
+        org:
+          type: string
+          minLength: 2
+          description: "Nom de l'organisation"
+          example: "Banque Nationale"
+        
+        # Contact: Email professionnel
+        email:
+          type: string
+          format: email
+          description: "Adresse email professionnelle"
+          example: "m.dupont@banque-nationale.fr"
+        
+        # Contact: Téléphone (optional)
+        phone:
+          type: string
+          description: "Numéro de téléphone (optionnel)"
+          example: "+33612345678"
+        
+        # Contact: Consentement
+        consent:
+          type: boolean
+          description: "Consentement pour être contacté (doit être true)"
+          example: true
+        
+        # Anti-spam honeypot (should always be empty or omitted)
+        honeypot:
+          type: string
+          description: "Honeypot field for spam detection (should be empty)"
+          example: ""
+    
+    TrialSuccessResponse:
+      type: object
+      required:
+        - success
+      properties:
+        success:
+          type: boolean
+          enum: [true]
+          description: "Indicates successful submission"
+          example: true
+        message:
+          type: string
+          description: "Optional success message"
+          example: "Demande d'essai enregistrée avec succès"
+    
+    TrialErrorResponse:
+      type: object
+      required:
+        - success
+        - error
+      properties:
+        success:
+          type: boolean
+          enum: [false]
+          description: "Indicates failed submission"
+          example: false
+        error:
+          type: string
+          description: "User-friendly error message in French"
+          example: "Données invalides"
+        details:
+          type: object
+          description: "Optional validation error details (Zod error format)"
+          additionalProperties: true
+          example:
+            issues:
+              - path: ["email"]
+                message: "Email invalide"
+  
+  securitySchemes:
+    # Note: No authentication required for public trial form
+    # Rate limiting is IP-based (5 requests per hour per IP)
+    {}
+
+security: []
+
+# API Behavior Notes:
+# 
+# 1. Rate Limiting:
+#    - 5 submissions per IP per hour
+#    - Counter resets every hour
+#    - Returns 429 when exceeded
+# 
+# 2. Email Sending:
+#    - Internal alert: Sent to SMTP_TO_ADDRESS (GAMR team)
+#    - Visitor confirmation: Sent to submitted email address
+#    - Failures logged but don't block success response
+# 
+# 3. Spam Protection:
+#    - Honeypot field (hidden input, should be empty)
+#    - Rate limiting (IP-based)
+#    - Email validation (format + optional MX record check)
+# 
+# 4. GDPR Compliance:
+#    - Explicit consent checkbox required
+#    - Privacy notice displayed on form
+#    - Email includes data usage information
+# 
+# 5. Analytics:
+#    - trial_submitted event sent to GA4 on success
+#    - Includes sector and org_size for segmentation
+

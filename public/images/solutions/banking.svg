@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <!-- Banking - Bank building icon -->
+  <circle cx="32" cy="32" r="30" fill="#10B981" opacity="0.1"/>
+  <rect x="20" y="24" width="24" height="20" fill="#10B981" rx="2"/>
+  <path d="M32 16 L46 24 L18 24 Z" fill="#059669"/>
+  <rect x="24" y="28" width="4" height="12" fill="#D1FAE5"/>
+  <rect x="30" y="28" width="4" height="12" fill="#D1FAE5"/>
+  <rect x="36" y="28" width="4" height="12" fill="#D1FAE5"/>
+  <rect x="18" y="44" width="28" height="3" fill="#065F46"/>
+  <circle cx="32" cy="32" r="4" fill="#FCD34D" stroke="#F59E0B" stroke-width="1.5"/>
+  <text x="32" y="34" font-family="Arial, sans-serif" font-size="4" fill="#D97706" text-anchor="middle" font-weight="bold">$</text>
+</svg>
+
+
+
