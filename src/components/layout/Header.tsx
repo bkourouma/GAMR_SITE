@@ -5,6 +5,7 @@ import { useState, useEffect } from 'react';
 
 export function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -13,6 +14,18 @@ export function Header() {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  // Close mobile menu when clicking outside or on a link
+  useEffect(() => {
+    if (isMobileMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [isMobileMenuOpen]);
 
   return (
     <header
@@ -26,6 +39,7 @@ export function Header() {
         <Link
           href="/"
           className="group relative text-3xl font-bold hover:scale-105 transition-all duration-300"
+          onClick={() => setIsMobileMenuOpen(false)}
         >
           <span className="relative z-10 bg-gradient-to-r from-red-500 via-yellow-500 to-green-500 bg-clip-text text-transparent">
             GAMR
@@ -33,6 +47,7 @@ export function Header() {
           <div className="absolute inset-0 bg-gradient-to-r from-red-500 via-yellow-500 to-green-500 rounded-lg opacity-0 group-hover:opacity-20 transition-opacity duration-300 blur-sm"></div>
         </Link>
 
+        {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center gap-8">
           <Link
             href="/fonctionnalites"
@@ -82,12 +97,89 @@ export function Header() {
           <Link
             href="/essai-gratuit"
             className="relative inline-flex items-center justify-center px-6 py-3 text-sm font-bold text-white bg-gradient-to-r from-primary-500 to-secondary-500 hover:from-primary-600 hover:to-secondary-600 hover:shadow-xl hover:-translate-y-1 rounded-xl transition-all duration-300 group overflow-hidden"
+            onClick={() => setIsMobileMenuOpen(false)}
           >
             <span className="relative z-10">Essai Gratuit</span>
             <div className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700"></div>
             <div className="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
           </Link>
+
+          {/* Mobile Menu Button */}
+          <button
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            className="md:hidden relative w-10 h-10 flex flex-col items-center justify-center gap-1.5 text-white hover:scale-110 transition-transform duration-300"
+            aria-label="Toggle menu"
+            aria-expanded={isMobileMenuOpen}
+          >
+            <span
+              className={`w-6 h-0.5 bg-white transition-all duration-300 ${
+                isMobileMenuOpen ? 'rotate-45 translate-y-2' : ''
+              }`}
+            />
+            <span
+              className={`w-6 h-0.5 bg-white transition-all duration-300 ${
+                isMobileMenuOpen ? 'opacity-0' : ''
+              }`}
+            />
+            <span
+              className={`w-6 h-0.5 bg-white transition-all duration-300 ${
+                isMobileMenuOpen ? '-rotate-45 -translate-y-2' : ''
+              }`}
+            />
+          </button>
         </div>
+      </div>
+
+      {/* Mobile Navigation Menu */}
+      <div
+        className={`md:hidden fixed inset-0 top-20 z-40 bg-slate-900/98 backdrop-blur-lg transition-all duration-300 ${
+          isMobileMenuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
+        }`}
+      >
+        <nav className="container mx-auto px-6 py-8 flex flex-col gap-6">
+          <Link
+            href="/fonctionnalites"
+            className="text-lg font-semibold text-white/90 hover:text-white hover:translate-x-2 transition-all duration-300 py-3 border-b border-white/10"
+            onClick={() => setIsMobileMenuOpen(false)}
+          >
+            Fonctionnalités
+          </Link>
+          <Link
+            href="/solutions"
+            className="text-lg font-semibold text-white/90 hover:text-white hover:translate-x-2 transition-all duration-300 py-3 border-b border-white/10"
+            onClick={() => setIsMobileMenuOpen(false)}
+          >
+            Solutions
+          </Link>
+          <Link
+            href="/tarifs"
+            className="text-lg font-semibold text-white/90 hover:text-white hover:translate-x-2 transition-all duration-300 py-3 border-b border-white/10"
+            onClick={() => setIsMobileMenuOpen(false)}
+          >
+            Tarifs
+          </Link>
+          <Link
+            href="/a-propos"
+            className="text-lg font-semibold text-white/90 hover:text-white hover:translate-x-2 transition-all duration-300 py-3 border-b border-white/10"
+            onClick={() => setIsMobileMenuOpen(false)}
+          >
+            À Propos
+          </Link>
+          <Link
+            href="/espace-clients"
+            className="text-lg font-semibold text-white/90 hover:text-white hover:translate-x-2 transition-all duration-300 py-3 border-b border-white/10"
+            onClick={() => setIsMobileMenuOpen(false)}
+          >
+            Espace Clients
+          </Link>
+          <Link
+            href="/demander-demo"
+            className="text-lg font-semibold text-white/90 hover:text-white hover:translate-x-2 transition-all duration-300 py-3 border-b border-white/10"
+            onClick={() => setIsMobileMenuOpen(false)}
+          >
+            Demander une Démo
+          </Link>
+        </nav>
       </div>
     </header>
   );

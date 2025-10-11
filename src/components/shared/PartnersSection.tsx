@@ -16,6 +16,7 @@ const partners = [
   { name: 'Imhotep Academy', logo: '/images/partenaires/imhotepacademy.jpeg' },
   { name: 'Imhotep Data', logo: '/images/partenaires/imhotepdata.png' },
   { name: 'SODEXAM', logo: '/images/partenaires/sodexam.jpg' },
+  { name: 'BMI', logo: '/images/partenaires/bmi.png' },
 ];
 
 export function PartnersSection() {
