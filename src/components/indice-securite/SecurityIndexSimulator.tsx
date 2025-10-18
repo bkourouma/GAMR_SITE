@@ -15,14 +15,14 @@ export function SecurityIndexSimulator() {
   // Animation effect to cycle through security index values
   useEffect(() => {
     if (!isClient) return;
-    
+
     const interval = setInterval(() => {
-      setSecurityIndex(prev => {
+      setSecurityIndex((prev) => {
         const next = prev + 1;
-        return next > 52 ? 0 : next;  // Reset to 0 when reaching 52
+        return next > 52 ? 0 : next; // Reset to 0 when reaching 52
       });
-    }, 80);  // Update every 80ms
-    
+    }, 80); // Update every 80ms
+
     return () => clearInterval(interval);
   }, [isClient]);
 
@@ -52,7 +52,7 @@ export function SecurityIndexSimulator() {
           <BarChart3 className="w-6 h-6 text-blue-600" />
           <h3 className="text-lg font-semibold text-gray-800">Indice de Sécurité</h3>
         </div>
-        
+
         {/* Progress Bar and Label */}
         <div className="space-y-3">
           {/* Progress Bar Implementation */}
@@ -60,7 +60,7 @@ export function SecurityIndexSimulator() {
             {/* Background Track */}
             <div className="w-full h-8 bg-gray-200 rounded-full overflow-hidden">
               {/* Animated Fill */}
-              <div 
+              <div
                 className={`h-full ${getSecurityColor(securityIndex)} transition-all duration-300 ease-out rounded-full flex items-center justify-end pr-3`}
                 style={{ width: `${(securityIndex / 60) * 100}%` }}
               >
@@ -69,7 +69,7 @@ export function SecurityIndexSimulator() {
                 )}
               </div>
             </div>
-            
+
             {/* Scale markers */}
             <div className="flex justify-between mt-2 text-xs text-gray-600">
               <span>0</span>
@@ -84,20 +84,26 @@ export function SecurityIndexSimulator() {
 
           {/* Status Label Implementation */}
           <div className="flex justify-center">
-            <span className={`px-3 py-1 rounded-full text-sm font-medium ${
-              securityIndex <= 10 ? 'bg-red-500/20 text-red-700' :
-              securityIndex <= 20 ? 'bg-red-400/20 text-red-700' :
-              securityIndex <= 30 ? 'bg-orange-500/20 text-orange-700' :
-              securityIndex <= 40 ? 'bg-yellow-500/20 text-yellow-700' :
-              'bg-green-500/20 text-green-700'
-            }`}>
+            <span
+              className={`px-3 py-1 rounded-full text-sm font-medium ${
+                securityIndex <= 10
+                  ? 'bg-red-500/20 text-red-700'
+                  : securityIndex <= 20
+                    ? 'bg-red-400/20 text-red-700'
+                    : securityIndex <= 30
+                      ? 'bg-orange-500/20 text-orange-700'
+                      : securityIndex <= 40
+                        ? 'bg-yellow-500/20 text-yellow-700'
+                        : 'bg-green-500/20 text-green-700'
+              }`}
+            >
               {getSecurityLabel(securityIndex)}
             </span>
           </div>
         </div>
-        
+
         <p className="text-sm text-gray-600">
-          Notre IA calcule automatiquement l'indice de sécurité de votre organisation
+          Notre IA calcule automatiquement l&apos;indice de sécurité de votre organisation
         </p>
       </div>
     </div>

@@ -19,11 +19,13 @@ This guide shows you how to point your GAMR site (currently on `gamr.engage-360.
 Choose one based on your needs:
 
 ### **Option A: Complete Migration** (Replace old domain with new)
+
 - New domain becomes the primary domain
 - Old domain can redirect to new domain
 - Best for rebranding
 
 ### **Option B: Multi-Domain** (Both domains work)
+
 - Both domains point to same site
 - Good for transition period
 - Keeps both active
@@ -44,10 +46,11 @@ Choose one based on your needs:
 4. **Click Save**
 
 **If using www subdomain**, also add:
-   - Type: `A`
-   - Name: `www`
-   - Points to: `147.93.44.169`
-   - TTL: `3600`
+
+- Type: `A`
+- Name: `www`
+- Points to: `147.93.44.169`
+- TTL: `3600`
 
 5. **Wait 10-30 minutes** for DNS propagation
 
@@ -105,6 +108,7 @@ error_log /var/log/nginx/your-new-domain.error.log;
 **Save**: `Ctrl+X`, `Y`, `Enter`
 
 **Optionally rename the config file**:
+
 ```bash
 sudo mv /etc/nginx/sites-available/gamr.engage-360.net /etc/nginx/sites-available/your-new-domain.com
 sudo rm /etc/nginx/sites-enabled/gamr.engage-360.net
@@ -139,6 +143,7 @@ error_log /var/log/nginx/your-new-domain.error.log;
 **Save**: `Ctrl+X`, `Y`, `Enter`
 
 **Enable the new site**:
+
 ```bash
 sudo ln -s /etc/nginx/sites-available/your-new-domain.com /etc/nginx/sites-enabled/
 ```
@@ -156,6 +161,7 @@ sudo systemctl reload nginx
 ```
 
 **Expected output**:
+
 ```
 nginx: configuration file /etc/nginx/nginx.conf test is successful
 ```
@@ -172,6 +178,7 @@ curl -I http://your-new-domain.com
 ```
 
 **From your browser**:
+
 - Visit: `http://your-new-domain.com`
 - Should load the GAMR site
 
@@ -192,6 +199,7 @@ sudo certbot --nginx -d your-new-domain.com -d www.your-new-domain.com
 **Wait 2-3 minutes** for certificate installation.
 
 **Test HTTPS**:
+
 - Visit: `https://your-new-domain.com`
 - Should show secure padlock 🔒
 
@@ -200,19 +208,23 @@ sudo certbot --nginx -d your-new-domain.com -d www.your-new-domain.com
 ### STEP 7: Verify Everything Works
 
 #### Check PM2 Status:
+
 ```bash
 pm2 list
 # gamr-site should show "online" (green)
 ```
 
 #### Check Nginx Status:
+
 ```bash
 sudo systemctl status nginx
 # Should show "active (running)"
 ```
 
 #### Test All Pages:
+
 Visit these URLs in your browser:
+
 - ✅ `https://your-new-domain.com/`
 - ✅ `https://your-new-domain.com/fonctionnalites`
 - ✅ `https://your-new-domain.com/solutions`
@@ -220,6 +232,7 @@ Visit these URLs in your browser:
 - ✅ `https://your-new-domain.com/a-propos`
 
 #### Verify Other Sites Still Work:
+
 - ✅ `https://engage-360.net`
 - ✅ `https://agents.engage-360.net`
 - ✅ `https://chat.engage-360.net`
@@ -268,12 +281,14 @@ server {
 **Save**: `Ctrl+X`, `Y`, `Enter`
 
 **Test and reload**:
+
 ```bash
 sudo nginx -t
 sudo systemctl reload nginx
 ```
 
 **Test redirect**:
+
 - Visit: `https://gamr.engage-360.net`
 - Should automatically redirect to: `https://your-new-domain.com`
 
@@ -299,6 +314,7 @@ nano .env
 ```
 
 **If you updated .env**:
+
 ```bash
 # Rebuild and restart
 pnpm build
@@ -384,18 +400,21 @@ pm2 list
 ### Domain doesn't load
 
 **Check DNS**:
+
 ```bash
 nslookup your-new-domain.com
 # Should return: 147.93.44.169
 ```
 
 **Check Nginx config**:
+
 ```bash
 sudo nginx -t
 sudo cat /etc/nginx/sites-available/your-new-domain.com | grep server_name
 ```
 
 **Check Nginx error logs**:
+
 ```bash
 sudo tail -50 /var/log/nginx/your-new-domain.error.log
 ```
@@ -403,9 +422,11 @@ sudo tail -50 /var/log/nginx/your-new-domain.error.log
 ### SSL certificate fails
 
 **Common issue**: DNS not propagated yet
+
 - **Solution**: Wait 30-60 minutes, then retry Certbot
 
 **Force retry**:
+
 ```bash
 sudo certbot --nginx -d your-new-domain.com --force-renewal
 ```
@@ -415,6 +436,7 @@ sudo certbot --nginx -d your-new-domain.com --force-renewal
 **Clear browser cache** or test in incognito mode
 
 **Check Nginx server_name**:
+
 ```bash
 sudo nginx -t
 sudo systemctl reload nginx
@@ -436,6 +458,7 @@ Once complete, your GAMR site will be accessible at:
 ## 📞 Need Help?
 
 If you encounter issues:
+
 1. Check DNS propagation: https://www.whatsmydns.net/
 2. Test SSL: https://www.ssllabs.com/ssltest/
 3. Review Nginx error logs
@@ -445,5 +468,3 @@ If you encounter issues:
 
 **Created**: October 2024  
 **Version**: 1.0.0
-
-

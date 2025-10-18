@@ -160,6 +160,7 @@ sudo nginx -t
 ```
 
 **Expected output**:
+
 ```
 nginx: configuration file /etc/nginx/nginx.conf test is successful
 ```
@@ -206,6 +207,7 @@ sudo certbot --nginx -d gestionrisques.com -d www.gestionrisques.com
 ```
 
 **Follow the prompts**:
+
 1. Enter your email address: `[your-email]`
 2. Agree to Terms of Service: `Y`
 3. Share email with EFF (optional): `N` or `Y`
@@ -229,7 +231,8 @@ curl -I https://gestionrisques.com
 
 Visit: `https://gestionrisques.com`
 
-**Expected**: 
+**Expected**:
+
 - ✅ Site loads with HTTPS
 - ✅ Padlock icon shows "Secure"
 - ✅ No SSL errors
@@ -281,6 +284,7 @@ sudo systemctl reload nginx
 ```
 
 **Test redirect**:
+
 - Visit: `https://gamr.engage-360.net`
 - Should automatically redirect to: `https://gestionrisques.com`
 
@@ -465,9 +469,11 @@ sudo systemctl reload nginx
 ### SSL certificate fails
 
 **Error**: "DNS problem: NXDOMAIN"
+
 - **Solution**: DNS not propagated yet, wait and retry
 
 **Retry SSL installation**:
+
 ```bash
 sudo certbot --nginx -d gestionrisques.com -d www.gestionrisques.com --force-renewal
 ```
@@ -475,17 +481,20 @@ sudo certbot --nginx -d gestionrisques.com -d www.gestionrisques.com --force-ren
 ### Site not loading
 
 **Check Nginx error logs**:
+
 ```bash
 sudo tail -50 /var/log/nginx/gestionrisques.com.error.log
 ```
 
 **Check PM2 app**:
+
 ```bash
 pm2 list
 pm2 logs gamr-site --lines 50
 ```
 
 **Verify port 3003 is listening**:
+
 ```bash
 sudo netstat -tulpn | grep 3003
 ```
@@ -495,6 +504,7 @@ sudo netstat -tulpn | grep 3003
 ## 📞 Support
 
 If issues persist:
+
 1. Check DNS: `nslookup gestionrisques.com`
 2. Check Nginx: `sudo nginx -t`
 3. Check PM2: `pm2 list`
@@ -506,5 +516,3 @@ If issues persist:
 **From**: gamr.engage-360.net  
 **To**: gestionrisques.com  
 **Status**: Ready to execute ✅
-
-

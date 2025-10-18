@@ -7,14 +7,14 @@ export function ScoreIndicator() {
     <section className="py-16 px-4 bg-gray-50">
       <div className="container mx-auto max-w-5xl">
         <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">
-          Échelle d'Évaluation de l'Indice de Sécurité
+          Échelle d&apos;Évaluation de l&apos;Indice de Sécurité
         </h2>
-        
+
         <p className="text-center text-gray-700 mb-8 max-w-3xl mx-auto">
-          L'indice de sécurité GAMR s'étend de 1 à 60, avec des plages de valeurs correspondant 
-          à différents niveaux de risque pour votre organisation.
+          L&apos;indice de sécurité GAMR s&apos;étend de 1 à 60, avec des plages de valeurs
+          correspondant à différents niveaux de risque pour votre organisation.
         </p>
-        
+
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {SECURITY_INDEX_DATA.scoreIndicators.map((indicator) => (
             <div
@@ -30,10 +30,10 @@ export function ScoreIndicator() {
             </div>
           ))}
         </div>
-        
+
         <div className="mt-10 bg-white p-6 rounded-lg shadow-md">
           <h3 className="text-xl font-semibold text-gray-900 mb-4">
-            Calcul de l'Indice de Sécurité
+            Calcul de l&apos;Indice de Sécurité
           </h3>
           <div className="flex flex-col md:flex-row items-center justify-center gap-4 p-4 bg-gray-50 rounded-lg">
             <div className="text-lg font-medium text-gray-700">Probabilité</div>

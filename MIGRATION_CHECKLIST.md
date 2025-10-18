@@ -1,4 +1,5 @@
 # ✅ GAMR Migration Checklist
+
 ## gamr.engage-360.net → gestionrisques.com
 
 ---
@@ -68,5 +69,3 @@
 ## 📞 Need Help?
 
 See detailed instructions in: `MIGRATE_TO_GESTIONRISQUES.md`
-
-
