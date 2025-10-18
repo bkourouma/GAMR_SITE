@@ -3,9 +3,96 @@
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
 import { createPortal } from 'react-dom';
+import { usePathname } from 'next/navigation';
+
+// Separate client component for mobile menu to avoid hydration issues
+function MobileMenu({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) {
+  return createPortal(
+    <div
+      className={`md:hidden fixed inset-0 z-[1000] transition-transform duration-300 ${
+        isOpen ? 'translate-x-0' : 'translate-x-full'
+      }`}
+      style={{ backgroundColor: 'rgba(7, 10, 15, 1)' }}
+      role="dialog"
+      aria-modal="true"
+    >
+      <div className="fixed top-0 left-0 right-0 h-20" />
+      <nav className="container mx-auto px-6 py-8 flex flex-col gap-6">
+        <Link
+          href="/fonctionnalites"
+          className="text-lg font-semibold text-white hover:translate-x-2 transition-all duration-300 py-3 border-b border-white/10"
+          onClick={onClose}
+        >
+          Fonctionnalités
+        </Link>
+        <Link
+          href="/solutions"
+          className="text-lg font-semibold text-white hover:translate-x-2 transition-all duration-300 py-3 border-b border-white/10"
+          onClick={onClose}
+        >
+          Solutions
+        </Link>
+        <Link
+          href="/indice-securite"
+          className="text-lg font-semibold text-white hover:translate-x-2 transition-all duration-300 py-3 border-b border-white/10"
+          onClick={onClose}
+        >
+          Indice de Sécurité
+        </Link>
+        <Link
+          href="/tarifs"
+          className="text-lg font-semibold text-white hover:translate-x-2 transition-all duration-300 py-3 border-b border-white/10"
+          onClick={onClose}
+        >
+          Tarifs
+        </Link>
+        <Link
+          href="/a-propos"
+          className="text-lg font-semibold text-white hover:translate-x-2 transition-all duration-300 py-3 border-b border-white/10"
+          onClick={onClose}
+        >
+          À Propos
+        </Link>
+        <Link
+          href="/espace-clients"
+          className="text-lg font-semibold text-white hover:translate-x-2 transition-all duration-300 py-3 border-b border-white/10"
+          onClick={onClose}
+        >
+          Espace Clients
+        </Link>
+        <Link
+          href="/demander-demo"
+          className="text-lg font-semibold text-white hover:translate-x-2 transition-all duration-300 py-3 border-b border-white/10"
+          onClick={onClose}
+        >
+          Demander une Démo
+        </Link>
+      </nav>
+    </div>,
+    document.body
+  );
+}
+
+// Client-side only component wrapper
+function ClientOnly({ children }: { children: React.ReactNode }) {
+  const [mounted, setMounted] = useState(false);
+  
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+  
+  if (!mounted) return null;
+  return <>{children}</>;
+}
 
 export function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const pathname = usePathname();
+  
+  // Close mobile menu when pathname changes (navigation occurs)
+  useEffect(() => {
+    setIsMobileMenuOpen(false);
+  }, [pathname]);
 
   // Close mobile menu when clicking outside or on a link
   useEffect(() => {
@@ -49,6 +136,13 @@ export function Header() {
             className="relative text-sm font-semibold text-white/90 hover:text-white transition-all duration-300 group"
           >
             Solutions
+            <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-orange-500 group-hover:w-full transition-all duration-300"></span>
+          </Link>
+          <Link
+            href="/indice-securite"
+            className="relative text-sm font-semibold text-white/90 hover:text-white transition-all duration-300 group"
+          >
+            Indice de Sécurité
             <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-orange-500 group-hover:w-full transition-all duration-300"></span>
           </Link>
           <Link
@@ -119,64 +213,9 @@ export function Header() {
       </div>
 
       {/* Mobile Navigation Menu (rendered in a portal to escape stacking contexts) */}
-      {typeof window !== 'undefined' &&
-        createPortal(
-          <div
-            className={`md:hidden fixed inset-0 z-[1000] transition-transform duration-300 ${
-              isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
-            }`}
-            style={{ backgroundColor: 'rgba(7, 10, 15, 1)' }}
-            role="dialog"
-            aria-modal="true"
-          >
-            <div className="fixed top-0 left-0 right-0 h-20" />
-            <nav className="container mx-auto px-6 py-8 flex flex-col gap-6">
-              <Link
-                href="/fonctionnalites"
-                className="text-lg font-semibold text-white hover:translate-x-2 transition-all duration-300 py-3 border-b border-white/10"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                Fonctionnalités
-              </Link>
-              <Link
-                href="/solutions"
-                className="text-lg font-semibold text-white hover:translate-x-2 transition-all duration-300 py-3 border-b border-white/10"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                Solutions
-              </Link>
-              <Link
-                href="/tarifs"
-                className="text-lg font-semibold text-white hover:translate-x-2 transition-all duration-300 py-3 border-b border-white/10"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                Tarifs
-              </Link>
-              <Link
-                href="/a-propos"
-                className="text-lg font-semibold text-white hover:translate-x-2 transition-all duration-300 py-3 border-b border-white/10"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                À Propos
-              </Link>
-              <Link
-                href="/espace-clients"
-                className="text-lg font-semibold text-white hover:translate-x-2 transition-all duration-300 py-3 border-b border-white/10"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                Espace Clients
-              </Link>
-              <Link
-                href="/demander-demo"
-                className="text-lg font-semibold text-white hover:translate-x-2 transition-all duration-300 py-3 border-b border-white/10"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                Demander une Démo
-              </Link>
-            </nav>
-          </div>,
-          document.body
-        )}
+      <ClientOnly>
+        {isMobileMenuOpen && <MobileMenu isOpen={isMobileMenuOpen} onClose={() => setIsMobileMenuOpen(false)} />}
+      </ClientOnly>
     </header>
   );
 }

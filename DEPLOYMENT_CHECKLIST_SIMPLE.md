@@ -25,7 +25,7 @@ Print this page and check off each step as you complete it!
 ## Application Setup (20 minutes)
 
 - [ ] **Step 6**: Created directory: `sudo mkdir -p /opt/gamr`
-- [ ] **Step 7**: Set permissions: `sudo chown -R $USER:$USER /opt/gamr`
+- [ ] **Step 7**: Set permissions: `sudo chown -R $USER:$USER   `
 - [ ] **Step 8**: Cloned repository: `cd /opt/gamr && git clone https://github.com/bkourouma/GAMR_SITE.git .`
 - [ ] **Step 9**: Installed pnpm: `npm install -g pnpm`
 - [ ] **Step 10**: Installed dependencies: `pnpm install`

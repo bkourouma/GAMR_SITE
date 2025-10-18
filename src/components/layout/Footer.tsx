@@ -35,6 +35,14 @@ export function Footer() {
               </li>
               <li>
                 <Link
+                  href="/indice-securite"
+                  className="text-sm text-gray-300 hover:text-white transition-colors"
+                >
+                  Indice de Sécurité
+                </Link>
+              </li>
+              <li>
+                <Link
                   href="/tarifs"
                   className="text-sm text-gray-300 hover:text-white transition-colors"
                 >

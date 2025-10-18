@@ -16,6 +16,8 @@ Auto-generated from all feature plans. Last updated: 2025-10-08
 - Static content stored in TypeScript data files (following pattern from `src/lib/features-data.ts`, `src/lib/stats.ts`) (006-redige-la-page)
 - TypeScript 5.3+ (Next.js 15 with App Router) + React Hook Form, Zod, ics (calendar generation), Resend/Nodemailer (email), date-fns-tz (timezone handling) (008-g-n-re)
 - JSON file or Prisma/PostgreSQL for demo request persistence (008-g-n-re)
+- TypeScript 5.x, Next.js 14.2.0, React 18.3.0 + Next.js, React, Tailwind CSS, Lucide React (009-add-security-index)
+- N/A (static content page) (009-add-security-index)
 
 ## Project Structure
 ```
@@ -30,9 +32,9 @@ npm test; npm run lint
 TypeScript 5.3+ with strict mode enabled: Follow standard conventions
 
 ## Recent Changes
+- 009-add-security-index: Added TypeScript 5.x, Next.js 14.2.0, React 18.3.0 + Next.js, React, Tailwind CSS, Lucide React
 - 008-g-n-re: Added TypeScript 5.3+ (Next.js 15 with App Router) + React Hook Form, Zod, ics (calendar generation), Resend/Nodemailer (email), date-fns-tz (timezone handling)
 - 008-g-n-re: Added TypeScript 5.3+ (Next.js 15 with App Router) + React Hook Form, Zod, ics (calendar generation), Resend/Nodemailer (email), date-fns-tz (timezone handling)
-- 006-redige-la-page: Added TypeScript 5+ with strict mode enabled + Next.js 14+ (App Router), React 18+, Tailwind CSS 3+
 
 <!-- MANUAL ADDITIONS START -->
 <!-- MANUAL ADDITIONS END -->
