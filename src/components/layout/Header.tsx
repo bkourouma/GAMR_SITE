@@ -53,13 +53,13 @@ function MobileMenu({ isOpen, onClose }: { isOpen: boolean; onClose: () => void 
         >
           À Propos
         </Link>
-        <Link
-          href="/espace-clients"
+        <a
+          href="https://gamerplatform.engage-360.net/login"
           className="text-lg font-semibold text-white hover:translate-x-2 transition-all duration-300 py-3 border-b border-white/10"
           onClick={onClose}
         >
           Espace Clients
-        </Link>
+        </a>
         <Link
           href="/demander-demo"
           className="text-lg font-semibold text-white hover:translate-x-2 transition-all duration-300 py-3 border-b border-white/10"
@@ -76,11 +76,11 @@ function MobileMenu({ isOpen, onClose }: { isOpen: boolean; onClose: () => void 
 // Client-side only component wrapper
 function ClientOnly({ children }: { children: React.ReactNode }) {
   const [mounted, setMounted] = useState(false);
-  
+
   useEffect(() => {
     setMounted(true);
   }, []);
-  
+
   if (!mounted) return null;
   return <>{children}</>;
 }
@@ -88,7 +88,7 @@ function ClientOnly({ children }: { children: React.ReactNode }) {
 export function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const pathname = usePathname();
-  
+
   // Close mobile menu when pathname changes (navigation occurs)
   useEffect(() => {
     setIsMobileMenuOpen(false);
@@ -162,13 +162,13 @@ export function Header() {
         </nav>
 
         <div className="flex items-center gap-4">
-          <Link
-            href="/espace-clients"
+          <a
+            href="https://gamerplatform.engage-360.net/login"
             className="hidden sm:inline-flex items-center justify-center px-4 py-2 text-sm font-semibold text-white/90 hover:text-white border border-white/30 hover:border-white/60 rounded-lg hover:scale-105 transition-all duration-300 relative group"
           >
             <span className="relative z-10">Espace Clients</span>
             <div className="absolute inset-0 bg-white/10 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-          </Link>
+          </a>
           <Link
             href="/demander-demo"
             className="hidden sm:inline-flex text-sm font-semibold text-white/80 hover:text-white hover:scale-105 transition-all duration-300 relative group"
@@ -214,7 +214,9 @@ export function Header() {
 
       {/* Mobile Navigation Menu (rendered in a portal to escape stacking contexts) */}
       <ClientOnly>
-        {isMobileMenuOpen && <MobileMenu isOpen={isMobileMenuOpen} onClose={() => setIsMobileMenuOpen(false)} />}
+        {isMobileMenuOpen && (
+          <MobileMenu isOpen={isMobileMenuOpen} onClose={() => setIsMobileMenuOpen(false)} />
+        )}
       </ClientOnly>
     </header>
   );
