@@ -98,13 +98,7 @@ export function DemoConfirmation({ data }: DemoConfirmationProps) {
         </div>
 
         {/* CTAs */}
-        <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
-          <a
-            href="/guide-demarrage"
-            className="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors text-center font-semibold"
-          >
-            Accéder au guide de démarrage
-          </a>
+        <div className="mt-8 flex justify-center">
           <a
             href="/"
             className="px-6 py-3 bg-white border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 transition-colors text-center font-semibold"

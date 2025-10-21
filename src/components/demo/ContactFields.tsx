@@ -96,13 +96,10 @@ export function ContactFields({ register, errors }: ContactFieldsProps) {
           className={`w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 ${
             errors.phone ? 'border-red-500' : 'border-gray-300'
           }`}
-          placeholder="+225 01 01 01 01 01"
+          placeholder="Votre numéro de téléphone"
           aria-invalid={!!errors.phone}
-          aria-describedby={errors.phone ? 'phone-error phone-help' : 'phone-help'}
+          aria-describedby={errors.phone ? 'phone-error' : undefined}
         />
-        <p id="phone-help" className="mt-1 text-sm text-gray-500">
-          Format : +225 01 01 01 01 01
-        </p>
         {errors.phone && (
           <p id="phone-error" className="mt-1 text-sm text-red-600" role="alert">
             {errors.phone.message}

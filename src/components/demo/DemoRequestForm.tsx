@@ -7,6 +7,7 @@ import { demoRequestSchema } from '@/lib/demo/schema';
 import type { DemoRequest, DemoRequestResponse } from '@/types/demo';
 import { ContactFields } from './ContactFields';
 import { QualificationFields } from './QualificationFields';
+import { SchedulingFields } from './SchedulingFields';
 import { ConsentFields } from './ConsentFields';
 import { DemoConfirmation } from './DemoConfirmation';
 
@@ -115,6 +116,17 @@ export function DemoRequestForm() {
           </h3>
           {/* @ts-expect-error - Type compatibility issue between Zod inferred types and react-hook-form */}
           <QualificationFields register={register} errors={errors} watch={watch} />
+        </div>
+
+        <div className="bg-white rounded-lg shadow-sm p-8">
+          <h3 className="text-lg font-semibold mb-6 flex items-center gap-2">
+            <span className="flex items-center justify-center w-8 h-8 bg-blue-600 text-white rounded-full text-sm">
+              3
+            </span>
+            Planification
+          </h3>
+          {/* @ts-expect-error - Type compatibility issue between Zod inferred types and react-hook-form */}
+          <SchedulingFields register={register} errors={errors} />
         </div>
 
         <div className="bg-white rounded-lg shadow-sm p-8">

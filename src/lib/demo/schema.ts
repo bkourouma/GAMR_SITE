@@ -127,13 +127,8 @@ export const contactSchema = z.object({
     .max(255, "L'email ne doit pas dépasser 255 caractères")
     .toLowerCase(),
 
-  // Phone format: +225 01 01 01 01 01 (Côte d'Ivoire)
-  phone: z
-    .string()
-    .default('')
-    .refine((val) => val === '' || /^\+225\s\d{2}\s\d{2}\s\d{2}\s\d{2}\s\d{2}$/.test(val), {
-      message: 'Le format du téléphone doit être: +225 01 01 01 01 01',
-    }),
+  // Phone - any string allowed
+  phone: z.string().default('').optional(),
 
   role: roleSchema.optional(),
 });
