@@ -44,8 +44,8 @@ export function AddonsSection({
             ⭐ {title}
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Enrichissez votre solution GAMR avec des fonctionnalités avancées adaptées à vos besoins
-            spécifiques.
+            Enrichissez votre solution GAMRdigitale avec des fonctionnalités avancées adaptées à vos
+            besoins spécifiques.
           </p>
         </div>
 

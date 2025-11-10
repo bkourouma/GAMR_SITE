@@ -3,10 +3,10 @@
  */
 
 export const SITE_CONFIG = {
-  name: 'GAMR',
-  title: 'GAMR - Plateforme Intelligente de Gestion des Risques | IA & Analytics',
+  name: 'GAMRdigitale',
+  title: 'GAMRdigitale - Plateforme Intelligente de Gestion des Risques | IA & Analytics',
   description:
-    'Transformez votre gestion des risques avec GAMR : évaluations automatisées, analyse IA, scoring intelligent. Essai gratuit 30 jours.',
+    'Transformez votre gestion des risques avec GAMRdigitale : évaluations automatisées, analyse IA, scoring intelligent. Essai gratuit 30 jours.',
   url: process.env.NEXT_PUBLIC_SITE_URL || 'https://gamr.com',
   locale: 'fr',
   contactEmail: 'contact@gamr.com',

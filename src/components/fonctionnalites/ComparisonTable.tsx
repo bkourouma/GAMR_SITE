@@ -2,7 +2,7 @@
  * ComparisonTable Component
  * Feature: Page Fonctionnalités - User Story 1
  *
- * Responsive table comparing "Avant GAMR" vs "Avec GAMR"
+ * Responsive table comparing "Avant GAMRdigitale" vs "Avec GAMRdigitale"
  * Desktop: Standard 3-column table
  * Mobile: Stacked card layout
  */
@@ -30,15 +30,15 @@ export function ComparisonTable({ data = comparisonData, className }: Comparison
         </h2>
 
         <p className="text-lg text-gray-600 text-center mb-12 max-w-3xl mx-auto">
-          Découvrez comment GAMR transforme la gestion des risques avec des gains mesurables en
-          productivité, conformité et gouvernance.
+          Découvrez comment GAMRdigitale transforme la gestion des risques avec des gains mesurables
+          en productivité, conformité et gouvernance.
         </p>
 
         {/* Desktop & Tablet: Standard table */}
         <div className="hidden sm:block overflow-x-auto">
           <table className="w-full border-collapse">
             <caption className="sr-only">
-              Comparaison de la gestion des risques avant et après GAMR
+              Comparaison de la gestion des risques avant et après GAMRdigitale
             </caption>
             <thead>
               <tr className="border-b-2 border-gray-200">
@@ -46,10 +46,10 @@ export function ComparisonTable({ data = comparisonData, className }: Comparison
                   Dimension
                 </th>
                 <th scope="col" className="text-left py-4 px-4 font-semibold text-gray-900 w-3/8">
-                  Avant GAMR
+                  Avant GAMRdigitale
                 </th>
                 <th scope="col" className="text-left py-4 px-4 font-semibold text-gray-900 w-3/8">
-                  Avec GAMR
+                  Avec GAMRdigitale
                 </th>
               </tr>
             </thead>
@@ -76,7 +76,7 @@ export function ComparisonTable({ data = comparisonData, className }: Comparison
                         ✅
                       </span>
                       <span>
-                        {item.situationWithGAMR}
+                        {item.situationWithGAMRdigitale}
                         {item.improvementMetric && (
                           <span className="ml-2 font-bold text-green-700 whitespace-nowrap">
                             {item.improvementMetric}
@@ -102,7 +102,7 @@ export function ComparisonTable({ data = comparisonData, className }: Comparison
 
               <div className="space-y-3">
                 <div>
-                  <p className="text-sm font-medium text-gray-700 mb-1">Avant GAMR</p>
+                  <p className="text-sm font-medium text-gray-700 mb-1">Avant GAMRdigitale</p>
                   <p className="text-gray-600 flex items-start">
                     <span className="text-red-600 mr-2" aria-label="Inconvénient">
                       ❌
@@ -112,13 +112,13 @@ export function ComparisonTable({ data = comparisonData, className }: Comparison
                 </div>
 
                 <div>
-                  <p className="text-sm font-medium text-gray-700 mb-1">Avec GAMR</p>
+                  <p className="text-sm font-medium text-gray-700 mb-1">Avec GAMRdigitale</p>
                   <p className="text-gray-600 flex items-start">
                     <span className="text-green-600 mr-2" aria-label="Avantage">
                       ✅
                     </span>
                     <span>
-                      {item.situationWithGAMR}
+                      {item.situationWithGAMRdigitale}
                       {item.improvementMetric && (
                         <span className="ml-2 font-bold text-green-700">
                           {item.improvementMetric}

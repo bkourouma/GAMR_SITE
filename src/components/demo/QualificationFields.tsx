@@ -202,7 +202,7 @@ export function QualificationFields({ register, errors, watch }: QualificationFi
             />
             <div>
               <span className="font-medium text-gray-900">Cloud</span>
-              <p className="text-sm text-gray-500">Hébergé et maintenu par GAMR</p>
+              <p className="text-sm text-gray-500">Hébergé et maintenu par GAMRdigitale</p>
             </div>
           </label>
           <label className="flex items-center space-x-3 cursor-pointer hover:bg-gray-50 p-3 rounded border border-gray-200">

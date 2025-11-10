@@ -21,7 +21,7 @@ const STATISTICS = [
     value: 50,
     suffix: '+',
     label: 'organisations',
-    ariaLabel: '50 plus organizations using GAMR',
+    ariaLabel: '50 plus organizations using GAMRdigitale',
   },
   {
     id: '2',
@@ -91,7 +91,8 @@ export function SocialProof() {
             Rejoignez 50+ Organisations de Confiance
           </h2>
           <p className="text-lg text-text/70">
-            Des entreprises de toutes tailles utilisent GAMR pour gérer leurs risques efficacement
+            Des entreprises de toutes tailles utilisent GAMRdigitale pour gérer leurs risques
+            efficacement
           </p>
         </div>
 

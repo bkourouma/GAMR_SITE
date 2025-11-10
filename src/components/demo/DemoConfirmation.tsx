@@ -38,7 +38,7 @@ export function DemoConfirmation({ data }: DemoConfirmationProps) {
         </h1>
 
         <p className="text-center text-gray-600 mb-8">
-          Nous configurons votre espace GAMR selon vos besoins.&nbsp; Vous recevrez un email
+          Nous configurons votre espace GAMRdigitale selon vos besoins.&nbsp; Vous recevrez un email
           d&apos;activation sous <strong>24 heures</strong> avec vos identifiants de connexion.
         </p>
 
@@ -70,7 +70,7 @@ export function DemoConfirmation({ data }: DemoConfirmationProps) {
                 1
               </span>
               <span className="text-sm text-gray-700">
-                Vous recevrez un email d&apos;activation avec vos identifiants GAMR
+                Vous recevrez un email d&apos;activation avec vos identifiants GAMRdigitale
               </span>
             </li>
             <li className="flex items-start gap-3">

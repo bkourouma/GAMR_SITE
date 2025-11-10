@@ -10,7 +10,7 @@ import type { TooltipDictionary } from '@/types/features';
 export const tooltipDefinitions: TooltipDictionary = {
   // P1 Priority - Core Terms (Always visible)
   GAMR: {
-    term: 'GAMR',
+    term: 'GAMRdigitale',
     definition:
       'Gestion et Analyse Méthodique des Risques - méthodologie structurée pour identifier, évaluer et piloter les risques organisationnels.',
   },

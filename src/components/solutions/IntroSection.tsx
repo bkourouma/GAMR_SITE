@@ -5,7 +5,7 @@ import { useIntersectionObserver } from '@/hooks/useIntersectionObserver';
 import { useRef } from 'react';
 
 /**
- * IntroSection - Introduction text explaining GAMR's multi-sector adaptability
+ * IntroSection - Introduction text explaining GAMRdigitale's multi-sector adaptability
  */
 export function IntroSection({ content, className = '' }: IntroSectionProps) {
   const ref = useRef<HTMLElement>(null);

@@ -54,9 +54,9 @@ export function HeroSection() {
 
             {/* Subheadline */}
             <p className="text-lg md:text-xl text-white/90 max-w-2xl mx-auto lg:mx-0">
-              GAMR est la plateforme de gestion des risques propulsée par l&apos;IA qui combine
-              évaluations structurées, scoring intelligent et recommandations actionnables dans une
-              interface intuitive unique.
+              GAMRdigitale est la plateforme de gestion des risques des professionnels de la
+              sécurité propulsée par l&apos;IA et qui combine évaluations structurées, scoring
+              intelligent et recommandations actionnables dans une interface intuitive unique.
             </p>
 
             {/* CTA Buttons */}
@@ -117,7 +117,7 @@ export function HeroSection() {
               <div className="relative w-full h-full flex items-center justify-center p-8">
                 <Image
                   src="/images/logo.jpg"
-                  alt="GAMR - Plateforme de Gestion et d'Analyse des Risques Métiers"
+                  alt="GAMRdigitale - Plateforme de Gestion et d'Analyse des Risques Métiers"
                   width={800}
                   height={800}
                   priority

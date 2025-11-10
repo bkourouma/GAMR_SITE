@@ -39,7 +39,7 @@ export async function sendDemoConfirmation(
     params;
 
   const organizerEmail = process.env.DEMO_ORGANIZER_EMAIL || 'demo@gamr.example';
-  const organizerName = process.env.DEMO_ORGANIZER_NAME || 'Équipe GAMR';
+  const organizerName = process.env.DEMO_ORGANIZER_NAME || 'Équipe GAMRdigitale';
 
   // Format meeting tool display
   const toolDisplay =
@@ -70,13 +70,13 @@ export async function sendDemoConfirmation(
     <body>
       <div class="container">
         <div class="header">
-          <h1>Demande de Démo GAMR Reçue</h1>
+          <h1>Demande de Démo GAMRdigitale Reçue</h1>
         </div>
         
         <div class="content">
           <p>Bonjour <strong>${fullName}</strong>,</p>
           
-          <p>Merci pour votre demande de démonstration personnalisée de GAMR pour <strong>${organization}</strong>.</p>
+          <p>Merci pour votre demande de démonstration personnalisée de GAMRdigitale pour <strong>${organization}</strong>.</p>
           
           <div class="info-box">
             <h3>Détails de votre demande :</h3>
@@ -106,7 +106,7 @@ export async function sendDemoConfirmation(
   const textContent = `
 Bonjour ${fullName},
 
-Merci pour votre demande de démonstration personnalisée de GAMR pour ${organization}.
+Merci pour votre demande de démonstration personnalisée de GAMRdigitale pour ${organization}.
 
 Détails de votre demande :
 - Créneau proposé (principal) : ${slot1Date} à ${slot1Time} (${timezone})
@@ -125,7 +125,7 @@ ${organizerName}
     const prospectMailOptions = {
       from: `${organizerName} <${organizerEmail}>`,
       to: to,
-      subject: 'Votre demande de démo GAMR - Confirmation',
+      subject: 'Votre demande de démo GAMRdigitale - Confirmation',
       html: htmlContent,
       text: textContent,
       attachments: icsContent
@@ -160,7 +160,7 @@ ${organizerName}
       <body>
         <div class="container">
           <div class="header">
-            <h1>Nouvelle Demande de Démo GAMR</h1>
+            <h1>Nouvelle Demande de Démo GAMRdigitale</h1>
           </div>
           
           <div class="content">
@@ -181,7 +181,7 @@ ${organizerName}
           </div>
           
           <div class="footer">
-            <p>Notification automatique du système GAMR</p>
+            <p>Notification automatique du système GAMRdigitale</p>
           </div>
         </div>
       </body>
@@ -189,7 +189,7 @@ ${organizerName}
     `;
 
     const teamNotificationText = `
-Nouvelle Demande de Démo GAMR
+Nouvelle Demande de Démo GAMRdigitale
 
 Informations du prospect :
 - Nom : ${fullName}

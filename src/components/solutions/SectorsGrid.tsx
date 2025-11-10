@@ -42,7 +42,8 @@ export function SectorsGrid({ industries, layout = 'grid', className = '' }: Sec
             Secteurs d&apos;Activité
           </h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-            GAMR s&apos;adapte aux spécificités de chaque secteur avec des solutions personnalisées
+            GAMRdigitale s&apos;adapte aux spécificités de chaque secteur avec des solutions
+            personnalisées
           </p>
         </div>
 

@@ -8,7 +8,7 @@ export function DemoValueProposition() {
           </h2>
 
           <p className="text-gray-700 leading-relaxed mb-6">
-            Nous configurons GAMR selon vos priorités risques et conformité. Votre espace
+            Nous configurons GAMRdigitale selon vos priorités risques et conformité. Votre espace
             d&apos;essai sera pré-configuré avec :
           </p>
 
@@ -118,8 +118,8 @@ export function DemoValueProposition() {
 
           <div className="mt-6 p-4 bg-blue-50 rounded-lg border border-blue-200">
             <p className="text-sm text-blue-900">
-              <strong>💡 Accès complet :</strong> Plateforme GAMR, modules de base, support par
-              email, modèle de risques ISO 31000 par défaut.
+              <strong>💡 Accès complet :</strong> Plateforme GAMRdigitale, modules de base, support
+              par email, modèle de risques ISO 31000 par défaut.
             </p>
           </div>
         </div>

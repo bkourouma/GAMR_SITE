@@ -119,7 +119,7 @@ export function generateProductSchema() {
   return {
     '@context': 'https://schema.org',
     '@type': 'SoftwareApplication',
-    name: 'GAMR Platform',
+    name: 'GAMRdigitale Platform',
     applicationCategory: 'BusinessApplication',
     description: SITE_CONFIG.description,
     offers: [

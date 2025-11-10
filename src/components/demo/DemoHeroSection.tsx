@@ -3,7 +3,7 @@ export function DemoHeroSection() {
     <section className="bg-gradient-to-r from-blue-600 to-blue-800 text-white py-16">
       <div className="container mx-auto px-4 max-w-4xl">
         <h1 className="text-4xl md:text-5xl font-bold mb-4 text-center">
-          Lancez votre essai gratuit GAMR
+          Lancez votre essai gratuit GAMRdigitale
         </h1>
         <p className="text-xl mb-8 text-center text-blue-100">
           10 questions, 2 minutes — Configurez votre essai selon vos besoins

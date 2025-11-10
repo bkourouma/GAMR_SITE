@@ -1,10 +1,10 @@
 /**
- * Type definitions for GAMR Features Page
+ * Type definitions for GAMRdigitale Features Page
  * Feature: Page Fonctionnalités
  */
 
 /**
- * Individual feature of the GAMR platform
+ * Individual feature of the GAMRdigitale platform
  */
 export interface Feature {
   /** Unique identifier (kebab-case) */
@@ -42,17 +42,17 @@ export interface FeaturesCollection {
 }
 
 /**
- * Single row in the "Avant GAMR vs Avec GAMR" comparison table
+ * Single row in the "Avant GAMRdigitale vs Avec GAMRdigitale" comparison table
  */
 export interface ComparisonItem {
   /** Aspect being compared (e.g., "Productivité") */
   dimension: string;
 
-  /** Description of pain point before GAMR */
+  /** Description of pain point before GAMRdigitale */
   situationBefore: string;
 
-  /** Description of improvement with GAMR */
-  situationWithGAMR: string;
+  /** Description of improvement with GAMRdigitale */
+  situationWithGAMRdigitale: string;
 
   /** Optional quantified improvement (e.g., "+70%") */
   improvementMetric?: string;

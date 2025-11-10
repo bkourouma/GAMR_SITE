@@ -51,7 +51,7 @@ export function FinalCTA() {
           Démarrez votre essai gratuit de 30 jours ou demandez une démonstration personnalisée.
           <br />
           <span className="text-blue-200 font-medium">
-            Rejoignez des centaines d&apos;entreprises qui font déjà confiance à GAMR.
+            Rejoignez des centaines d&apos;entreprises qui font déjà confiance à GAMRdigitale.
           </span>
         </p>
 

@@ -7,7 +7,7 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Brand */}
           <div>
-            <h3 className="text-lg font-bold text-white mb-4">GAMR</h3>
+            <h3 className="text-lg font-bold text-white mb-4">GAMRdigitale</h3>
             <p className="text-sm text-gray-300">
               Plateforme intelligente de gestion des risques propulsée par l&apos;IA
             </p>

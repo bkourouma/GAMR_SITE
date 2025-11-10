@@ -6,12 +6,12 @@ import { useIntersectionObserver } from '@/hooks/useIntersectionObserver';
 import { useRef } from 'react';
 
 /**
- * ComparisonTable - Comparative table showing sectors, norms, and GAMR modules
+ * ComparisonTable - Comparative table showing sectors, norms, and GAMRdigitale modules
  * Responsive: Horizontal scroll on mobile with sticky first column
  */
 export function ComparisonTable({
   industries,
-  caption = 'Comparaison des secteurs et modules GAMR',
+  caption = 'Comparaison des secteurs et modules GAMRdigitale',
   className = '',
 }: ComparisonTableProps) {
   const ref = useRef<HTMLElement>(null);
@@ -47,7 +47,7 @@ export function ComparisonTable({
             Tableau comparatif
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Découvrez comment GAMR s&apos;adapte aux spécificités de chaque secteur
+            Découvrez comment GAMRdigitale s&apos;adapte aux spécificités de chaque secteur
           </p>
         </div>
 
@@ -77,7 +77,7 @@ export function ComparisonTable({
                     scope="col"
                     className="px-6 py-6 text-left font-bold text-white min-w-[300px]"
                   >
-                    Modules GAMR
+                    Modules GAMRdigitale
                   </th>
                 </tr>
               </thead>

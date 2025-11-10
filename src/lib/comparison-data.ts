@@ -1,5 +1,5 @@
 /**
- * Comparison Data: "Avant GAMR" vs "Avec GAMR"
+ * Comparison Data: "Avant GAMRdigitale" vs "Avec GAMRdigitale"
  * Feature: Page Fonctionnalités
  *
  * Contains 10 comparison items covering all major aspects
@@ -56,7 +56,7 @@ export const comparisonData: ComparisonTable = [
     situationBefore:
       "Évaluations subjectives variant selon l'évaluateur, méthodologies incohérentes",
     situationWithGAMR:
-      'Méthodologie GAMR standardisée appliquée uniformément sur tous les sites et projets',
+      'Méthodologie GAMRdigitale standardisée appliquée uniformément sur tous les sites et projets',
   },
   {
     dimension: 'Décision',

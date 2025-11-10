@@ -7,13 +7,13 @@ import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   // Basic SEO
-  title: 'Tarifs GAMR - Abonnement Cloud et Licence On-Premise',
+  title: 'Tarifs GAMRdigitale - Abonnement Cloud et Licence On-Premise',
   description:
-    'Découvrez les tarifs GAMR : plans Cloud dès 100.000 FCFA/mois (Starter, Pro, Business) avec essai gratuit 30 jours, ou licence On-Premise perpétuelle. Transparence totale, sans engagement.',
+    'Découvrez les tarifs GAMRdigitale : plans Cloud dès 100.000 FCFA/mois (Starter, Pro, Business) avec essai gratuit 30 jours, ou licence On-Premise perpétuelle. Transparence totale, sans engagement.',
 
   // Keywords (for reference)
   keywords: [
-    'tarifs GAMR',
+    'tarifs GAMRdigitale',
     'prix cloud',
     'licence on-premise',
     'analyse des risques',
@@ -25,19 +25,19 @@ export const metadata: Metadata = {
 
   // OpenGraph
   openGraph: {
-    title: 'Tarifs GAMR - Abonnement Cloud et Licence On-Premise',
+    title: 'Tarifs GAMRdigitale - Abonnement Cloud et Licence On-Premise',
     description:
       'Plans Cloud dès 100.000 FCFA/mois avec essai gratuit 30 jours. Licence On-Premise disponible. Choisissez le modèle adapté à votre gouvernance.',
-    url: 'https://engage-360.net/tarifs', // TODO: Update to actual GAMR domain when available
-    siteName: 'GAMR',
+    url: 'https://engage-360.net/tarifs', // TODO: Update to actual GAMRdigitale domain when available
+    siteName: 'GAMRdigitale',
     locale: 'fr_FR',
     type: 'website',
     images: [
       {
-        url: 'https://engage-360.net/images/tarifs/og-image.png', // TODO: Update to actual GAMR domain
+        url: 'https://engage-360.net/images/tarifs/og-image.png', // TODO: Update to actual GAMRdigitale domain
         width: 1200,
         height: 630,
-        alt: 'Grille tarifaire GAMR - Cloud et On-Premise',
+        alt: 'Grille tarifaire GAMRdigitale - Cloud et On-Premise',
         type: 'image/png',
       },
     ],
@@ -46,15 +46,15 @@ export const metadata: Metadata = {
   // Twitter Card
   twitter: {
     card: 'summary_large_image',
-    title: 'Tarifs GAMR - Abonnement Cloud et Licence On-Premise',
+    title: 'Tarifs GAMRdigitale - Abonnement Cloud et Licence On-Premise',
     description:
       'Plans Cloud dès 100.000 FCFA/mois avec essai gratuit 30 jours. Licence On-Premise disponible.',
-    images: ['https://engage-360.net/images/tarifs/og-image.png'], // TODO: Update to actual GAMR domain
+    images: ['https://engage-360.net/images/tarifs/og-image.png'], // TODO: Update to actual GAMRdigitale domain
   },
 
   // Canonical URL
   alternates: {
-    canonical: 'https://engage-360.net/tarifs', // TODO: Update to actual GAMR domain
+    canonical: 'https://engage-360.net/tarifs', // TODO: Update to actual GAMRdigitale domain
   },
 
   // Robots

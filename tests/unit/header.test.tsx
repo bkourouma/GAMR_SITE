@@ -23,7 +23,7 @@ describe('Header Component', () => {
 
   it('renders the logo', () => {
     render(<Header />);
-    expect(screen.getByText('GAMR')).toBeInTheDocument();
+    expect(screen.getByText('GAMRdigitale')).toBeInTheDocument();
   });
 
   it('renders desktop navigation links', () => {

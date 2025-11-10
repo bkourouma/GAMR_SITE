@@ -19,7 +19,7 @@ export function ConversionCTA() {
       <div className="container mx-auto max-w-4xl text-center">
         {/* Headline */}
         <h2 id="cta-title" className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
-          Adoptez la méthodologie GAMR dès aujourd&apos;hui
+          Adoptez la méthodologie GAMRdigitale dès aujourd&apos;hui
         </h2>
 
         {/* Supporting text */}

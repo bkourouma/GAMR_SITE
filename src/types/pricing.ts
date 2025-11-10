@@ -1,5 +1,5 @@
 /**
- * Pricing Types for GAMR Tarifs Page
+ * Pricing Types for GAMRdigitale Tarifs Page
  * Feature: 005-g-n-re - Page Tarifs
  */
 

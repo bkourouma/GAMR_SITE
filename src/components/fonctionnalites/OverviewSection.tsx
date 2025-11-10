@@ -24,7 +24,7 @@ export function OverviewSection() {
             Centraliser la gestion des <TermWithTooltip term="risque">risques</TermWithTooltip>{' '}
             permet de gagner en efficacité, en{' '}
             <TermWithTooltip term="conformité">conformité</TermWithTooltip> et en visibilité.{' '}
-            <TermWithTooltip term="GAMR">GAMR</TermWithTooltip> vous accompagne de
+            <TermWithTooltip term="GAMRdigitale">GAMRdigitale</TermWithTooltip> vous accompagne de
             l&apos;identification à la{' '}
             <TermWithTooltip term="traçabilité">traçabilité</TermWithTooltip> complète de vos
             risques.
@@ -40,7 +40,7 @@ export function OverviewSection() {
         <div className="relative w-full aspect-video rounded-lg overflow-hidden shadow-2xl">
           <Image
             src="/images/dashboard.jpg"
-            alt="Interface de la plateforme GAMR montrant le tableau de bord de gestion des risques"
+            alt="Interface de la plateforme GAMRdigitale montrant le tableau de bord de gestion des risques"
             width={1200}
             height={800}
             priority

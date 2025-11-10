@@ -54,15 +54,15 @@ export async function POST(req: Request) {
 
     // .ics for slot1 (schema field is `_timezone`)
     const icsContent = generateICS({
-      summary: 'Démo GAMR',
-      description: `Démonstration personnalisée GAMR pour ${data.organization}`,
+      summary: 'Démo GAMRdigitale',
+      description: `Démonstration personnalisée GAMRdigitale pour ${data.organization}`,
       _timezone: data._timezone,
       date: data.slot1.date,
       time: data.slot1.time,
       durationMinutes: DEFAULT_DEMO_DURATION,
       location: meetingLocation,
       organizer: {
-        name: process.env.DEMO_ORGANIZER_NAME || 'Équipe GAMR',
+        name: process.env.DEMO_ORGANIZER_NAME || 'Équipe GAMRdigitale',
         email: process.env.DEMO_ORGANIZER_EMAIL || 'demo@gamr.example',
       },
       attendee: { name: data.fullName, email: data.email },
@@ -70,8 +70,8 @@ export async function POST(req: Request) {
 
     // Calendar links (accept `_timezone` from schema)
     const googleCalendarURL = generateGoogleCalendarURL({
-      title: 'Démo GAMR',
-      description: `Démonstration personnalisée GAMR pour ${data.organization}`,
+      title: 'Démo GAMRdigitale',
+      description: `Démonstration personnalisée GAMRdigitale pour ${data.organization}`,
       location: meetingLocation,
       startDate: data.slot1.date,
       startTime: data.slot1.time,
@@ -80,8 +80,8 @@ export async function POST(req: Request) {
     });
 
     const outlookURL = generateOutlookURL({
-      title: 'Démo GAMR',
-      description: `Démonstration personnalisée GAMR pour ${data.organization}`,
+      title: 'Démo GAMRdigitale',
+      description: `Démonstration personnalisée GAMRdigitale pour ${data.organization}`,
       location: meetingLocation,
       startDate: data.slot1.date,
       startTime: data.slot1.time,

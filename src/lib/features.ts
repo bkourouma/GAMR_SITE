@@ -7,9 +7,9 @@ export const FEATURES: Feature[] = [
     slug: 'indice-securite-temps-reel',
     icon: 'gauge',
     shortDescription:
-      "Visualisez votre posture de sécurité globale en un coup d'œil avec un indice dynamique 0-60 qui se met à jour automatiquement après chaque évaluation.",
+      "Visualisez votre posture de sécurité globale en un coup d'œil avec un indice dynamique 3-60 qui se met à jour automatiquement après chaque évaluation.",
     fullDescription:
-      "L'Indice de Sécurité GAMR offre une vue executive unique de votre posture de sécurité. Calculé automatiquement et mis à jour en temps réel après chaque évaluation complétée, cet indice sur 60 combine vos scores d'évaluation, la couverture de vos priorités d'action, le taux de résolution des risques critiques et la conformité aux objectifs de sécurité. Pondéré selon votre secteur d'activité, il permet de piloter votre sécurité par objectifs et de démontrer l'amélioration continue à votre direction.",
+      "L'Indice de Sécurité GAMRdigitale offre une vue executive unique de votre posture de sécurité. Calculé automatiquement et mis à jour en temps réel après chaque évaluation complétée, cet indice sur 60 combine vos scores d'évaluation, la couverture de vos priorités d'action, le taux de résolution des risques critiques et la conformité aux objectifs de sécurité. Pondéré selon votre secteur d'activité, il permet de piloter votre sécurité par objectifs et de démontrer l'amélioration continue à votre direction.",
     benefits: [
       'Vision executive : un seul chiffre pour communiquer votre posture sécurité',
       'Pilotage par objectifs : suivez la progression vers vos cibles',
@@ -51,7 +51,7 @@ export const FEATURES: Feature[] = [
     shortDescription:
       "Laissez l'IA transformer vos données de sécurité en intelligence actionnable avec scoring automatique et recommandations contextuelles.",
     fullDescription:
-      "L'analyse IA GAMR élimine les biais subjectifs avec un scoring automatique basé sur la méthodologie Probabilité × Vulnérabilité × Impact. Les recommandations sont générées à partir de vos réponses d'évaluation et adaptées à votre secteur d'activité, avec niveaux de confiance pour chaque suggestion. Le système détecte automatiquement les anomalies et vous alerte sur les incohérences.",
+      "L'analyse IA GAMRdigitale élimine les biais subjectifs avec un scoring automatique basé sur la méthodologie Probabilité × Vulnérabilité × Impact. Les recommandations sont générées à partir de vos réponses d'évaluation et adaptées à votre secteur d'activité, avec niveaux de confiance pour chaque suggestion. Le système détecte automatiquement les anomalies et vous alerte sur les incohérences.",
     benefits: [
       "Éliminez les biais subjectifs dans l'évaluation",
       "Conseils d'expert sans embaucher de consultants",
@@ -65,13 +65,13 @@ export const FEATURES: Feature[] = [
   },
   {
     id: '4',
-    name: 'Gestion des Fiches GAMR',
+    name: 'Gestion des Fiches GAMRdigitale',
     slug: 'fiches-gamr',
     icon: 'file-text',
     shortDescription:
       "De l'évaluation à l'action : gestion complète du cycle de vie des risques avec scoring dynamique et matrices visuelles.",
     fullDescription:
-      "Les fiches de risque GAMR sont générées automatiquement depuis vos évaluations avec un scoring dynamique 0-60. Visualisez votre paysage de risques avec des matrices et cartes thermiques, suivez l'évolution dans le temps avec le contrôle de version complet, et bénéficiez de rappels automatiques de révision. Export PDF pour reporting et conformité.",
+      "Les fiches de risque GAMRdigitale sont générées automatiquement depuis vos évaluations avec un scoring dynamique 3-60. Visualisez votre paysage de risques avec des matrices et cartes thermiques, suivez l'évolution dans le temps avec le contrôle de version complet, et bénéficiez de rappels automatiques de révision. Export PDF pour reporting et conformité.",
     benefits: [
       'Visibilité 360° de votre paysage de risques',
       'Priorisez les ressources sur les menaces critiques',
@@ -92,7 +92,7 @@ export const FEATURES: Feature[] = [
     shortDescription:
       'Transformez les risques en résultats avec un suivi intelligent des actions, priorisation automatique et dashboards KPI.',
     fullDescription:
-      'Ne manquez jamais une tâche de sécurité critique avec la gestion intelligente des actions GAMR. Priorisation automatique basée sur les scores de risque, assignation avec accès basé sur les rôles, suivi des échéances avec notifications, monitoring de progression et taux de complétion. Estimez coûts et durées, suivez la probabilité de succès.',
+      'Ne manquez jamais une tâche de sécurité critique avec la gestion intelligente des actions GAMRdigitale. Priorisation automatique basée sur les scores de risque, assignation avec accès basé sur les rôles, suivi des échéances avec notifications, monitoring de progression et taux de complétion. Estimez coûts et durées, suivez la probabilité de succès.',
     benefits: [
       'Ne manquez jamais une tâche critique',
       'Responsabilité avec propriété claire',

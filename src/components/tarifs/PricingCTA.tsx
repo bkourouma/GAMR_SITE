@@ -42,7 +42,7 @@ export interface PricingCTAProps {
  */
 export function PricingCTA({
   title = 'Prêt à commencer ?',
-  description = 'Rejoignez les organisations qui font confiance à GAMR pour leur gestion des risques et conformité.',
+  description = 'Rejoignez les organisations qui font confiance à GAMRdigitale pour leur gestion des risques et conformité.',
   primaryCtaText = 'Démarrez votre essai gratuit',
   primaryCtaHref = '/inscription',
   secondaryCtaText = 'Demander une démo',

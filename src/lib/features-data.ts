@@ -1,5 +1,5 @@
 /**
- * Features Data for GAMR Platform
+ * Features Data for GAMRdigitale Platform
  * Feature: Page Fonctionnalités
  *
  * Contains 7 main features per FR-004 specification

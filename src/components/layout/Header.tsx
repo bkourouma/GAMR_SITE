@@ -117,7 +117,7 @@ export function Header() {
           onClick={() => setIsMobileMenuOpen(false)}
         >
           <span className="relative z-10 bg-gradient-to-r from-red-500 via-yellow-500 to-green-500 bg-clip-text text-transparent">
-            GAMR
+            GAMRdigitale
           </span>
           <div className="absolute inset-0 bg-gradient-to-r from-red-500 via-yellow-500 to-green-500 rounded-lg opacity-0 group-hover:opacity-20 transition-opacity duration-300 blur-sm"></div>
         </Link>

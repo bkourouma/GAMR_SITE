@@ -26,23 +26,24 @@ export function ASPCIPartnerSection() {
           {/* Text content */}
           <div className="flex-1 space-y-4">
             <p className="text-lg text-gray-700 leading-relaxed">
-              Depuis plus d&apos;une dizaine d&apos;années, <strong>ASPCI</strong> assure
-              l&apos;assistance et la formation des agents des Ports d&apos;Abidjan et de San-Pedro
-              ainsi que de nombreuses multinationales notamment dans l&apos;industrie extractive en
-              Côte d&apos;Ivoire et dans d&apos;autres pays de la sous-région.
+              Depuis plus de 25 ans, <strong>ASPCI/ASP-AFRIQUE</strong>, assure le conseil et la
+              formation en sécurité et sûreté dans les ports Autonomes d&apos;Abidjan et de
+              San-Pedro ainsi que dans de nombreuses multinationales notamment AGL, SITARAIL,
+              COOPEC, PAKIDIE, dans l&apos;Industrie extractive en Côte d&apos;Ivoire, au Mali et au
+              Burkina Faso
             </p>
 
             <p className="text-base text-gray-600 leading-relaxed">
               Cette expertise reconnue dans le domaine de la sécurité et de la gestion des risques
-              fait d&apos;ASPCI le partenaire idéal pour accompagner le développement et le
-              déploiement de la plateforme GAMR.
+              fait d&apos;<strong>ASPCI/ASP-Afrique</strong> le partenaire idéal pour accompagner le
+              développement et le déploiement de la plate-forme GAMR-digitale.
             </p>
 
             {/* Trust badges */}
             <div className="flex flex-wrap gap-4 pt-4">
               <div className="flex items-center gap-2 text-sm text-gray-600">
                 <span className="text-green-600">✓</span>
-                <span>10+ années d&apos;expérience</span>
+                <span>25+ années d&apos;expérience</span>
               </div>
               <div className="flex items-center gap-2 text-sm text-gray-600">
                 <span className="text-green-600">✓</span>
@@ -60,7 +61,7 @@ export function ASPCIPartnerSection() {
             <div className="relative w-full aspect-[3/2] rounded-lg overflow-hidden shadow-lg border-4 border-blue-100 bg-white p-8 flex items-center justify-center">
               <Image
                 src="/images/aspci.jpg"
-                alt="Logo ASPCI - Partenaire de confiance GAMR"
+                alt="Logo ASPCI - Partenaire de confiance GAMRdigitale"
                 width={600}
                 height={400}
                 loading="lazy"

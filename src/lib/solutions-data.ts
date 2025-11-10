@@ -2,7 +2,7 @@ import { Industry } from '@/types/solutions';
 
 /**
  * Industry sector data for the Solutions page
- * Contains 6 key sectors with their regulatory frameworks and GAMR solutions
+ * Contains 6 key sectors with their regulatory frameworks and GAMRdigitale solutions
  */
 export const industries: Industry[] = [
   {

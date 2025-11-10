@@ -17,12 +17,12 @@ export function PricingStructuredData() {
   const structuredData = {
     '@context': 'https://schema.org',
     '@type': 'Product',
-    name: "GAMR - Grille d'Analyse des Menaces et Risques",
+    name: "GAMRdigitale - Grille d'Analyse des Menaces et Risques",
     description:
       'Solution complète de gestion des risques, conformité réglementaire et analyse des menaces pour entreprises et organisations africaines.',
     brand: {
       '@type': 'Organization',
-      name: 'GAMR',
+      name: 'GAMRdigitale',
     },
     offers: {
       '@type': 'AggregateOffer',
@@ -42,7 +42,7 @@ export function PricingStructuredData() {
           unitText: 'MONTH',
         },
         availability: 'https://schema.org/InStock',
-        url: `https://engage-360.net/tarifs#${plan.tier}`, // TODO: Update to actual GAMR domain
+        url: `https://engage-360.net/tarifs#${plan.tier}`, // TODO: Update to actual GAMRdigitale domain
         description: `Plan ${plan.name}: ${plan.userLimit} ${plan.userLimit === 1 ? 'utilisateur' : 'utilisateurs'}, ${plan.standardsLimit} ${plan.standardsLimit === 1 ? 'norme' : 'normes'}, ${plan.actionPrioritiesLimit} actions prioritaires/an`,
       })),
     },

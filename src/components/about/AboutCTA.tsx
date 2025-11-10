@@ -14,7 +14,7 @@ export function AboutCTA() {
           Prêt à transformer votre gestion des risques ?
         </h2>
         <p className="text-xl text-white/90 mb-8">
-          Rejoignez les centaines d&apos;organisations qui font confiance à GAMR.
+          Rejoignez les centaines d&apos;organisations qui font confiance à GAMRdigitale.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <CTAButton href="/essai-gratuit" size="lg" variant="secondary">

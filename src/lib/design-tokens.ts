@@ -8,7 +8,7 @@
 import { ColorToken, ColorCategory } from '@/types/design-system';
 
 /**
- * Color palette for GAMR brand
+ * Color palette for GAMRdigitale brand
  * All colors meet WCAG AA contrast requirements
  */
 export const colorTokens: ColorToken[] = [

@@ -12,16 +12,16 @@ import { AchievementsSection } from '@/components/about/AchievementsSection';
 import { AboutCTA } from '@/components/about/AboutCTA';
 
 export const metadata: Metadata = {
-  title: 'À Propos de GAMR - Notre Mission et Notre Équipe',
+  title: 'À Propos de GAMRdigitale - Notre Mission et Notre Équipe',
   description:
-    'Découvrez l&apos;équipe passionnée derrière GAMR, notre mission de simplifier la gestion des associations sportives, et nos valeurs d&apos;innovation et d&apos;excellence.',
+    'Découvrez l&apos;équipe passionnée derrière GAMRdigitale, notre mission de simplifier la gestion des associations sportives, et nos valeurs d&apos;innovation et d&apos;excellence.',
   openGraph: {
-    title: 'À Propos de GAMR - Notre Mission et Notre Équipe',
+    title: 'À Propos de GAMRdigitale - Notre Mission et Notre Équipe',
     description:
-      'Rencontrez l&apos;équipe GAMR et découvrez notre mission d&apos;innovation dans la gestion des associations sportives.',
+      'Rencontrez l&apos;équipe GAMRdigitale et découvrez notre mission d&apos;innovation dans la gestion des associations sportives.',
     type: 'website',
     locale: 'fr_FR',
-    siteName: 'GAMR',
+    siteName: 'GAMRdigitale',
   },
   alternates: { canonical: '/a-propos' },
   robots: { index: true, follow: true },

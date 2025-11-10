@@ -48,7 +48,7 @@ export interface AnimatedCounterProps {
  *   end={500}
  *   suffix="+"
  *   triggerOnScroll={true}
- *   ariaLabel="500 plus organizations using GAMR"
+ *   ariaLabel="500 plus organizations using GAMRdigitale"
  *   className="text-5xl font-bold text-primary"
  * />
  * ```

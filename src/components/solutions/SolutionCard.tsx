@@ -134,7 +134,7 @@ export function SolutionCard({
       <section>
         <h3 className="text-sm font-semibold uppercase mb-3 flex items-center">
           <span className="w-2 h-2 rounded-full mr-2 bg-green-500"></span>
-          <span className="text-green-600">Solutions GAMR</span>
+          <span className="text-green-600">Solutions GAMRdigitale</span>
         </h3>
         <ul className="space-y-3">
           {industry.solutions.map((solution, index) => (

@@ -1,5 +1,5 @@
 /**
- * ROI Calculator Types for GAMR Tarifs Page
+ * ROI Calculator Types for GAMRdigitale Tarifs Page
  * Feature: 005-g-n-re - Page Tarifs
  */
 

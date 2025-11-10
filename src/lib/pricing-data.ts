@@ -2,7 +2,7 @@
  * Pricing Data - Single Source of Truth
  * Feature: 005-g-n-re - Page Tarifs
  *
- * All pricing information for GAMR Cloud and On-Premise models
+ * All pricing information for GAMRdigitale Cloud and On-Premise models
  */
 
 import type {
@@ -52,11 +52,11 @@ export const cloudPlans: PricingPlan[] = [
     basePrice: 250000, // FCFA per month
     annualPrice: 2550000, // 250000 * 12 * 0.85
     userLimit: 5,
-    standardsLimit: 3,
+    standardsLimit: 2,
     actionPrioritiesLimit: 10,
     features: [
       'Toutes les fonctionnalités Starter',
-      'Évaluation selon 3 normes de conformité',
+      'Évaluation selon 2 normes de conformité',
       "Jusqu'à 10 priorités d'actions par an",
       'Rapports personnalisables illimités',
       'Notifications multi-canaux (email, SMS, Slack)',
@@ -79,11 +79,11 @@ export const cloudPlans: PricingPlan[] = [
     basePrice: 500000, // FCFA per month
     annualPrice: 5100000, // 500000 * 12 * 0.85
     userLimit: 25,
-    standardsLimit: 10,
+    standardsLimit: 4,
     actionPrioritiesLimit: 25,
     features: [
       'Toutes les fonctionnalités Pro',
-      'Évaluation selon 10 normes de conformité',
+      'Évaluation selon 4 normes de conformité',
       "Jusqu'à 25 priorités d'actions par an",
       'Rapports exécutifs automatisés',
       'Historique des données illimité',
@@ -353,7 +353,7 @@ export const faqEntries: FAQEntry[] = [
     id: 'faq-payment',
     question: 'Quels sont les moyens de paiement acceptés ?',
     answer:
-      'Paiement par carte bancaire (Visa, Mastercard), virement SEPA, ou Mobile Money (Orange Money, MTN, Moov). Facturation mensuelle ou annuelle. Devis sur demande pour paiement par bon de commande (plans Business et Enterprise uniquement).',
+      'Paiement par carte bancaire (Visa, Mastercard), virement SEPA, ou Mobile Money (Orange Money, MTN, Moov, TrésorMoney). Facturation mensuelle ou annuelle. Devis sur demande pour paiement par bon de commande (plans Business et Enterprise uniquement).',
     category: 'billing',
     displayOrder: 4,
     keywords: ['paiement', 'carte', 'virement', 'mobile money'],
@@ -378,16 +378,16 @@ export const faqEntries: FAQEntry[] = [
   },
   {
     id: 'faq-compliance',
-    question: 'GAMR est-il conforme aux standards africains (ANSSI-CI, RGPD) ?',
+    question: 'GAMRdigitale est-il conforme aux standards africains (ANSSI-CI, RGPD) ?',
     answer:
-      "Oui, GAMR est conçu pour la conformité réglementaire africaine. Conformité RGPD complète, alignement ANSSI-CI (Côte d'Ivoire), support des standards ISO 27001, ISO 27002, NIST, et normes sectorielles. Certifications en cours pour ISO 27001.",
+      "Oui, GAMRdigitale est conçu pour la conformité réglementaire africaine. Conformité RGPD complète, alignement ANSSI-CI (Côte d'Ivoire), support des standards ISO 27001, ISO 27002, NIST, et normes sectorielles. Certifications en cours pour ISO 27001.",
     category: 'compliance',
     displayOrder: 7,
     keywords: ['conformité', 'rgpd', 'anssi', 'iso', 'certification'],
   },
   {
     id: 'faq-reversibility',
-    question: 'Puis-je exporter mes données si je quitte GAMR ?',
+    question: 'Puis-je exporter mes données si je quitte GAMRdigitale ?',
     answer:
       'Oui, réversibilité complète garantie. Export de toutes vos données en CSV, JSON, ou PDF à tout moment depuis le tableau de bord. Support gratuit pour la transition vers une autre solution pendant 30 jours après résiliation.',
     category: 'billing',

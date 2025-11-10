@@ -2,7 +2,7 @@
  * HeroSection Component
  * Feature: Page Fonctionnalités - User Story 1
  *
- * Hero section with title, subtitle with GAMR tooltip, and dual CTAs
+ * Hero section with title, subtitle with GAMRdigitale tooltip, and dual CTAs
  */
 
 'use client';
@@ -26,11 +26,11 @@ export function HeroSection() {
           Toutes vos analyses de risques, réunies dans une seule plateforme
         </h1>
 
-        {/* Subtitle with GAMR tooltip */}
+        {/* Subtitle with GAMRdigitale tooltip */}
         <p className="text-xl md:text-2xl text-gray-600 mb-10 max-w-3xl mx-auto">
           De la <TermWithTooltip term="cartographie">cartographie</TermWithTooltip> à la décision,{' '}
-          <TermWithTooltip term="GAMR">GAMR</TermWithTooltip> automatise et simplifie la gestion des
-          menaces et des risques.
+          <TermWithTooltip term="GAMRdigitale">GAMRdigitale</TermWithTooltip> automatise et
+          simplifie la gestion des menaces et des risques.
         </p>
 
         {/* Dual CTAs with hierarchy */}

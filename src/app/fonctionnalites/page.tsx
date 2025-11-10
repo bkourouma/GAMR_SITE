@@ -1,8 +1,8 @@
 /**
- * Features Page - Page Fonctionnalités GAMR
+ * Features Page - Page Fonctionnalités GAMRdigitale
  * Feature: Page Fonctionnalités - User Story 1 MVP
  *
- * Main landing page showcasing GAMR platform capabilities
+ * Main landing page showcasing GAMRdigitale platform capabilities
  */
 
 import type { Metadata } from 'next';
@@ -16,15 +16,15 @@ import { ConversionCTA } from '@/components/fonctionnalites/ConversionCTA';
 
 // SEO Metadata (SEO-001 to SEO-007)
 export const metadata: Metadata = {
-  title: 'Fonctionnalités GAMR | Plateforme de Gestion des Risques',
+  title: 'Fonctionnalités GAMRdigitale | Plateforme de Gestion des Risques',
   description:
-    'Découvrez les fonctionnalités de GAMR : cartographie des menaces, évaluation automatisée, indicateurs de performance, rapports intelligents. Simplifiez la gestion de vos risques.',
+    'Découvrez les fonctionnalités de GAMRdigitale : cartographie des menaces, évaluation automatisée, indicateurs de performance, rapports intelligents. Simplifiez la gestion de vos risques.',
   keywords: [
     'gestion des risques',
     'cartographie',
     'audit',
     'conformité',
-    'GAMR',
+    'GAMRdigitale',
     "Côte d'Ivoire",
     'évaluation des risques',
     'tableaux de bord',
@@ -32,12 +32,12 @@ export const metadata: Metadata = {
     'conformité ISO',
   ],
   openGraph: {
-    title: 'Fonctionnalités GAMR - Plateforme de Gestion des Risques',
+    title: 'Fonctionnalités GAMRdigitale - Plateforme de Gestion des Risques',
     description:
-      'Cartographie, évaluation automatisée, et pilotage complet de vos risques avec la méthodologie GAMR.',
+      'Cartographie, évaluation automatisée, et pilotage complet de vos risques avec la méthodologie GAMRdigitale.',
     type: 'website',
     locale: 'fr_FR',
-    siteName: 'GAMR',
+    siteName: 'GAMRdigitale',
   },
   alternates: {
     canonical: '/fonctionnalites',

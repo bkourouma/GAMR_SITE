@@ -11,6 +11,7 @@
 **Purpose**: Represents the main page entity containing all Security Index content
 
 **Fields**:
+
 - `id`: string - Unique identifier for the page
 - `title`: string - Page title ("Indice de Sécurité")
 - `description`: string - Meta description for SEO
@@ -19,6 +20,7 @@
 - `processSteps`: ProcessStep[] - Array of 7-step evaluation process
 
 **Relationships**:
+
 - Contains multiple `ScoreIndicator` entities
 - Contains multiple `ProcessStep` entities
 - Contains one `MethodologySection` entity
@@ -28,6 +30,7 @@
 **Purpose**: Represents a visual indicator for a specific security score range
 
 **Fields**:
+
 - `id`: string - Unique identifier
 - `minScore`: number - Minimum score for this range
 - `maxScore`: number - Maximum score for this range
@@ -37,6 +40,7 @@
 - `textColor`: string - Text color for contrast
 
 **Validation Rules**:
+
 - `minScore` must be >= 0
 - `maxScore` must be <= 60
 - `minScore` must be < `maxScore`
@@ -50,6 +54,7 @@
 **Purpose**: Represents one of the 7 steps in the GAMR evaluation process
 
 **Fields**:
+
 - `id`: string - Unique identifier
 - `stepNumber`: number - Sequential step number (1-7)
 - `title`: string - Step title in French
@@ -58,6 +63,7 @@
 - `formula`: string - Optional formula if applicable (e.g., for step 6)
 
 **Validation Rules**:
+
 - `stepNumber` must be between 1 and 7
 - `title` must not be empty
 - `description` must not be empty
@@ -70,6 +76,7 @@
 **Purpose**: Contains the high-level explanation of the GAMR methodology
 
 **Fields**:
+
 - `id`: string - Unique identifier
 - `title`: string - Section title
 - `objectives`: string[] - Array of GAMR objectives
@@ -78,6 +85,7 @@
 - `disclaimer`: string - Important disclaimer about methodology
 
 **Validation Rules**:
+
 - `title` must not be empty
 - `objectives` array must contain at least 3 items
 - `overview` must not be empty
@@ -130,56 +138,64 @@ interface MethodologySection {
 The following static data will be stored in `/src/lib/constants/security-index.ts`:
 
 ### Score Indicators
+
 ```typescript
 const SCORE_INDICATORS: ScoreIndicator[] = [
   {
-    id: "high-risk",
+    id: 'high-risk',
     minScore: 0,
     maxScore: 10,
-    color: "bg-red-500",
-    label: "Risque Élevé",
-    description: "Sécurité critique - Action immédiate requise",
-    textColor: "text-white"
+    color: 'bg-red-500',
+    label: 'Risque Élevé',
+    description: 'Sécurité critique - Action immédiate requise',
+    textColor: 'text-white',
   },
   {
-    id: "medium-high-risk", 
+    id: 'medium-high-risk',
     minScore: 20,
     maxScore: 30,
-    color: "bg-orange-500",
-    label: "Risque Moyen-Élevé",
+    color: 'bg-orange-500',
+    label: 'Risque Moyen-Élevé',
     description: "Sécurité préoccupante - Plan d'action nécessaire",
-    textColor: "text-white"
+    textColor: 'text-white',
   },
   {
-    id: "medium-low-risk",
+    id: 'medium-low-risk',
     minScore: 30,
     maxScore: 40,
-    color: "bg-yellow-400", 
-    label: "Risque Moyen-Faible",
-    description: "Sécurité acceptable - Améliorations recommandées",
-    textColor: "text-gray-900"
+    color: 'bg-yellow-400',
+    label: 'Risque Moyen-Faible',
+    description: 'Sécurité acceptable - Améliorations recommandées',
+    textColor: 'text-gray-900',
   },
   {
-    id: "low-risk",
+    id: 'low-risk',
     minScore: 40,
     maxScore: 60,
-    color: "bg-green-500",
-    label: "Risque Faible", 
-    description: "Sécurité satisfaisante - Maintenance continue",
-    textColor: "text-white"
-  }
+    color: 'bg-green-500',
+    label: 'Risque Faible',
+    description: 'Sécurité satisfaisante - Maintenance continue',
+    textColor: 'text-white',
+  },
 ];
 ```
 
 ### Process Steps
+
 ```typescript
 const PROCESS_STEPS: ProcessStep[] = [
   {
-    id: "targets",
+    id: 'targets',
     stepNumber: 1,
-    title: "Cibles Potentielles (CP)",
-    description: "Identification des éléments critiques de l'entreprise qui pourraient être visés par des actes malveillants.",
-    examples: ["Fonctions clés", "Personnes importantes", "Zones vulnérables", "Environnement immédiat"]
+    title: 'Cibles Potentielles (CP)',
+    description:
+      "Identification des éléments critiques de l'entreprise qui pourraient être visés par des actes malveillants.",
+    examples: [
+      'Fonctions clés',
+      'Personnes importantes',
+      'Zones vulnérables',
+      'Environnement immédiat',
+    ],
   },
   // ... additional steps 2-7
 ];
@@ -195,16 +211,19 @@ const PROCESS_STEPS: ProcessStep[] = [
 ## Validation Rules
 
 ### Score Indicator Validation
+
 - Score ranges must not overlap
-- All scores 0-60 must be covered by exactly one indicator
+- All scores 3-60 must be covered by exactly one indicator
 - Color combinations must meet WCAG AA contrast requirements
 
-### Process Step Validation  
+### Process Step Validation
+
 - Must have exactly 7 steps
 - Step numbers must be sequential (1-7)
 - Each step must have non-empty title and description
 
 ### Content Validation
+
 - All text content must be in French
 - No technical jargon in user-facing text
 - All descriptions must be business-friendly

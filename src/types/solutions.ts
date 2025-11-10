@@ -4,7 +4,7 @@
  */
 
 /**
- * Represents an industry sector that GAMR serves
+ * Represents an industry sector that GAMRdigitale serves
  */
 export interface Industry {
   /** Unique identifier for anchor navigation (e.g., "secteur-bancaire") */
@@ -15,7 +15,7 @@ export interface Industry {
   normes: string[];
   /** Key challenges faced by this sector */
   defis: string[];
-  /** GAMR solutions addressing these challenges */
+  /** GAMRdigitale solutions addressing these challenges */
   solutions: string[];
   /** Path to icon or component name */
   icone: string;
@@ -47,8 +47,8 @@ export interface ComparisonRow {
   secteur: string;
   /** List of key norms */
   normesKeys: string[];
-  /** List of GAMR modules */
-  modulesGAMR: string[];
+  /** List of GAMRdigitale modules */
+  modulesGAMRdigitale: string[];
 }
 
 /**

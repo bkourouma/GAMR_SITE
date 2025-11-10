@@ -6,17 +6,20 @@
 import type { CompanyInfo, TeamMember, CompanyValue, AboutStat } from '@/types/about';
 
 export const COMPANY_INFO: CompanyInfo = {
-  name: 'GAMR',
+  name: 'GAMRdigitale',
   mission:
-    'Révolutionner la gestion des risques grâce à l&apos;intelligence artificielle et l&apos;analyse de données avancée',
+    'Révolutionner la gestion des risques grâce à une expertise avérée en ingénierie de sécurité et à la maîtrise de l&apos;intelligence artificielle en analyse de données avancée',
   story:
-    'Fondée en 2020, GAMR est née de la conviction que la gestion des risques devait être simplifiée, automatisée et accessible à tous. Notre équipe d&apos;experts en cybersécurité, IA et analyse de données a développé une plateforme innovante qui transforme la façon dont les organisations identifient, évaluent et gèrent leurs risques.',
+    'Développée en 2020, GAMRdigitale est née de la conviction que la gestion des risques devait être simplifiée, automatisée et accessible à tous. Notre équipe d&apos;experts en ingénierie de sécurité et en intelligence artificielle a développé une plate-forme innovante qui transforme la façon dont les organisations identifient, évaluent et gèrent leurs risques.',
   milestones: [
-    { year: '2020', achievement: 'Création de GAMR et lancement de la première version' },
-    { year: '2021', achievement: 'Intégration de l&apos;IA pour l&apos;analyse prédictive' },
-    { year: '2022', achievement: '100+ clients actifs en Côte d&apos;Ivoire' },
-    { year: '2023', achievement: 'Expansion régionale en Afrique de l&apos;Ouest' },
-    { year: '2024', achievement: 'Certification ISO 27001 et partenariats stratégiques' },
+    {
+      year: '2020',
+      achievement: 'Développement de la GAMR digitale et lancement de la 1ere version',
+    },
+    { year: '2021', achievement: "Intégration de l'IA pour l'apport de l'analyse prédictive" },
+    { year: '2022', achievement: "1ers clients en Côte d'Ivoire" },
+    { year: '2023', achievement: "Expansion en Afrique de l'Ouest" },
+    { year: '2024', achievement: 'Lancements certificats ISO 27001 et partenariats stratégiques' },
   ],
 };
 

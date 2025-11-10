@@ -22,10 +22,16 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: 'GAMR - Plateforme Intelligente de Gestion des Risques | IA & Analytics',
+  title: 'GAMRdigitale - Plateforme Intelligente de Gestion des Risques | IA & Analytics',
   description:
-    'Transformez votre gestion des risques avec GAMR : évaluations automatisées, analyse IA, scoring intelligent. Essai gratuit 30 jours.',
-  keywords: ['gestion des risques', 'plateforme sécurité', 'analyse IA', 'audit sécurité', 'GAMR'],
+    'Transformez votre gestion des risques avec GAMRdigitale : évaluations automatisées, analyse IA, scoring intelligent. Essai gratuit 30 jours.',
+  keywords: [
+    'gestion des risques',
+    'plateforme sécurité',
+    'analyse IA',
+    'audit sécurité',
+    'GAMRdigitale',
+  ],
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

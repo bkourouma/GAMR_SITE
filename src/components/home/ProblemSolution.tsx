@@ -40,7 +40,7 @@ const SOLUTIONS = [
     id: '1',
     title: 'Indice de Sécurité en Temps Réel',
     description:
-      'Vision consolidée avec un indice 0-60 qui évolue automatiquement après chaque évaluation',
+      'Vision consolidée avec un indice 3-60 qui évolue automatiquement après chaque évaluation',
   },
   {
     id: '2',
@@ -49,7 +49,7 @@ const SOLUTIONS = [
   },
   {
     id: '3',
-    title: 'Méthodologie GAMR Standardisée',
+    title: 'Méthodologie GAMRdigitale Standardisée',
     description: 'Scoring cohérent basé sur 42 objectifs de sécurité standardisés',
   },
   {
@@ -97,8 +97,8 @@ export function ProblemSolution() {
             <span className="text-success font-bold">Solution</span>
           </h2>
           <p className="text-lg text-text/70 max-w-2xl mx-auto">
-            GAMR transforme chaque défi de gestion des risques en opportunité d&apos;amélioration
-            continue
+            GAMRdigitale transforme chaque défi de gestion des risques en opportunité
+            d&apos;amélioration continue
           </p>
         </div>
 
@@ -166,7 +166,7 @@ export function ProblemSolution() {
                   <CheckCircle2 className="w-6 h-6 text-white" />
                 </div>
                 <h3 className="text-2xl md:text-3xl font-bold text-text">
-                  Comment GAMR les résout
+                  Comment GAMRdigitale les résout
                 </h3>
               </div>
             </div>
@@ -219,7 +219,7 @@ export function ProblemSolution() {
               Prêt à transformer votre gestion des risques ?
             </p>
             <p className="text-sm text-text/70">
-              Découvrez comment GAMR peut simplifier vos processus dès aujourd&apos;hui
+              Découvrez comment GAMRdigitale peut simplifier vos processus dès aujourd&apos;hui
             </p>
           </div>
         </div>

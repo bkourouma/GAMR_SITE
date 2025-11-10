@@ -32,10 +32,10 @@ export function DemoVideo() {
       <div className="container mx-auto max-w-4xl">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-            Découvrez GAMR en Action
+            Découvrez GAMRdigitale en Action
           </h2>
           <p className="text-lg text-white/90">
-            2 minutes pour comprendre comment GAMR transforme votre gestion des risques
+            2 minutes pour comprendre comment GAMRdigitale transforme votre gestion des risques
           </p>
         </div>
 

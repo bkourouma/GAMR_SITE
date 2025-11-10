@@ -1,5 +1,5 @@
 /**
- * Tarifs Page - GAMR Pricing
+ * Tarifs Page - GAMRdigitale Pricing
  * Feature: 005-g-n-re - Page Tarifs
  *
  * Main pricing page with Cloud and On-Premise options

@@ -65,7 +65,7 @@ export function ROICalculator({ planId, onCalculate, className }: ROICalculatorP
             📊 Calculateur de ROI
           </h2>
           <p className="text-lg text-gray-600">
-            Estimez le retour sur investissement de GAMR pour votre organisation
+            Estimez le retour sur investissement de GAMRdigitale pour votre organisation
           </p>
         </div>
 
