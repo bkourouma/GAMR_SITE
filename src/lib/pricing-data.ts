@@ -11,8 +11,47 @@ import type {
   ComparisonDimension,
   FAQEntry,
   OnPremisePricing,
+  EvaluationPricing,
+  IntegrationPricing,
 } from '@/types/pricing';
 import type { ROIConstants } from '@/types/roi';
+
+/**
+ * 1-EVALUATION Pricing
+ */
+export const evaluationPricing: EvaluationPricing = {
+  title: '1-EVALUATION',
+  description: 'Audit complet de votre site avec rapport détaillé',
+  activities: [
+    { name: 'Collecte de données de terrain', included: true },
+    { name: 'Traitement et analyse de données', included: true },
+    { name: 'Validation des données', included: true },
+    { name: 'Reportage', included: true },
+    { name: 'Remise de rapport provisoire', included: true },
+    { name: 'Prise en compte des remarques', included: true },
+    { name: 'Remise de rapport', included: true },
+    { name: 'Production de la GAMR', included: true },
+    { name: 'Formation du chef de sécurité', included: true },
+  ],
+  totalCost: 5000000, // 5 000 000 FCFA
+};
+
+/**
+ * 2-INTEGRATION DES DONNEES Pricing
+ */
+export const integrationPricing: IntegrationPricing = {
+  title: '2-INTEGRATION DES DONNEES',
+  description: "Activation de votre compte avec vos données d'évaluation",
+  services: [
+    "Import des données d'évaluation dans votre espace SAAS",
+    'Configuration personnalisée de votre environnement',
+    "Formation à l'utilisation (2 sessions de 2h)",
+    'Support dédié pendant 30 jours',
+  ],
+  standardPrice: 1500000, // 1 500 000 FCFA
+  annualPrice: 0, // GRATUIT si souscription annuelle
+  badge: '💡 INCLUS si souscription annuelle',
+};
 
 /**
  * Cloud pricing plans (4 tiers)

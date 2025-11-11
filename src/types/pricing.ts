@@ -4,6 +4,48 @@
  */
 
 /**
+ * Evaluation activity item
+ */
+export interface EvaluationActivity {
+  /** Activity name */
+  name: string;
+  /** Whether this activity is included in the package */
+  included: boolean;
+}
+
+/**
+ * Evaluation package pricing
+ */
+export interface EvaluationPricing {
+  /** Package title */
+  title: string;
+  /** Activities included in evaluation */
+  activities: EvaluationActivity[];
+  /** Total cost in FCFA */
+  totalCost: number;
+  /** Description/subtitle */
+  description?: string;
+}
+
+/**
+ * Integration package pricing
+ */
+export interface IntegrationPricing {
+  /** Package title */
+  title: string;
+  /** List of services included */
+  services: string[];
+  /** Standard price in FCFA */
+  standardPrice: number;
+  /** Price when subscribing annually (usually 0 for free) */
+  annualPrice: number;
+  /** Description/subtitle */
+  description?: string;
+  /** Badge text (e.g., "GRATUIT si annuel") */
+  badge?: string;
+}
+
+/**
  * Deployment model for the pricing plan
  */
 export type DeploymentModel = 'cloud' | 'on-premise';
